@@ -1,12 +1,25 @@
 {
- "name":"ROLLVERSE – Idle Dice",
- "short_name":"ROLLVERSE",
- "description":"Würfel, Upgrades, Kombos, Automatisierung und Prestige.",
- "start_url":"./",
- "scope":"./",
- "display":"standalone",
- "orientation":"portrait",
- "background_color":"#090e21",
- "theme_color":"#090e21",
- "icons":[{"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},{"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]
+  "name": "ROLLVERSE – The Long Game",
+  "short_name": "ROLLVERSE",
+  "description": "Eine Welt aus Würfeln. Anspruchsvolle Progression, Automatisierung und Prestige.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0c0b1e",
+  "theme_color": "#0c0b1e",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }

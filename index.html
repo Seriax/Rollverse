@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
-  <meta name="theme-color" content="#090e21" />
+  <meta name="theme-color" content="#0c0b1e" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="ROLLVERSE" />
@@ -121,12 +121,34 @@
     .toast.show { transform:translate(-50%,0); opacity:1; }
     @media(max-width:370px){ .app {padding-left:13px;padding-right:13px;} .dice-field {gap:12px;} .die {width:62px;height:62px;padding:8px;} .up-card { gap:8px; } .buy { min-width:75px; }}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after {animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+:root{--bg:#0c0b1e;--surface:#17152f;--muted:#a3a0bf;--mint:#91eed0;--stroke:#b5a4ff22;--felt:#382e64;--edge:#a98bdb;--glow:#ac88ff}
+body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 65%)}
+.app{max-width:560px;padding-left:20px;padding-right:20px}header{padding-top:calc(env(safe-area-inset-top) + 18px);padding-bottom:16px}.brand strong{font-size:14px;letter-spacing:2px}.brand small{font-size:8px}.logo{background:linear-gradient(145deg,#bc95fa,#6659ad);border:1px solid #d7bfff66}.level{font-size:9px;padding:8px}.stats{padding:16px 19px;border-radius:21px;background:linear-gradient(120deg,#272040,#19182f)}.big-money{font-size:35px}.statrow{padding-top:11px;margin-top:12px}.page{margin-top:18px}h2{font-size:19px}
+.arena{--felt:#382e64;--edge:#a98bdb;--glow:#ac88ff;min-height:320px;padding:17px 16px 20px;isolation:isolate;background:radial-gradient(ellipse at 50% 40%,#64449a65,transparent 70%),linear-gradient(180deg,#211935,#111326);border-color:#b394dd30;box-shadow:0 20px 50px #0004,inset 0 1px #dfcfff19}
+.arena[data-world="1"]{--felt:#164a46;--edge:#6bcab1;--glow:#91eed0;background:radial-gradient(ellipse at 50% 35%,#327b6c55,transparent 65%),linear-gradient(#142e30,#101c28)}.arena[data-world="2"]{--felt:#224868;--edge:#95d8f3;--glow:#9edeff;background:radial-gradient(ellipse at 50% 35%,#5690c655,transparent 65%),linear-gradient(#1a2845,#111a2c)}.arena[data-world="3"]{--felt:#603650;--edge:#f1b672;--glow:#ffd98b;background:radial-gradient(ellipse at 50% 35%,#bc714655,transparent 65%),linear-gradient(#3a2035,#1c1428)}
+.arena:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#ffe1b799 1px,transparent 1px),radial-gradient(#ffffff55 1px,transparent 1px);background-size:67px 59px,91px 87px;background-position:8px 23px,39px 12px;opacity:.24;z-index:-1;pointer-events:none}.arena-head{font-size:10px}.arena-head strong{color:var(--glow);font-size:10px;letter-spacing:1px}
+.table-scene{position:relative;perspective:800px;margin:15px -3px 0;height:222px;display:flex;align-items:center;justify-content:center}
+.board-plinth{position:absolute;width:96%;height:176px;top:34px;border-radius:31px;transform:rotateX(35deg) rotateZ(-7deg);background:linear-gradient(160deg,#eed4b4,#b68d79 42%,#695163);border:2px solid #edcfb3;box-shadow:0 15px 0 #574357,0 18px 0 #291d35,0 32px 25px #0007,0 0 45px #aa73ff15}
+.board-plinth:before{content:"";position:absolute;inset:8px;border-radius:24px;background:radial-gradient(ellipse at 50% 35%,#ffffff18,transparent),var(--felt);border:2px solid var(--edge);box-shadow:inset 0 3px 16px #0006,0 0 8px #fff2}.board-plinth:after{content:"✦";position:absolute;inset:24px;display:grid;place-items:center;color:var(--edge);font-size:95px;opacity:.12;border:1px solid #d5bbff22;border-radius:18px}
+.board-runes{position:absolute;inset:15px;display:flex;justify-content:space-between;color:var(--edge);font-size:12px;letter-spacing:5px;opacity:.65}.board-runes span:last-child{align-self:flex-end}
+.dice-field{width:90%;min-height:170px;padding:22px 6px 12px;gap:18px 20px;z-index:3;align-content:center;transform:rotate(-7deg);margin-top:-3px}.dice-field:before{display:none}.die{width:61px;height:61px;border-radius:14px;padding:10px;box-shadow:inset 0 2px 2px #ffffffc0,inset 0 -3px 5px #0003,5px 7px 0 #58537d,6px 10px 0 #383450,10px 18px 13px #0007;--rot:7deg!important;transform:rotate(7deg)}.die .pip{width:9px;height:9px}.die:before{content:"";position:absolute;inset:4px;border:1px solid #fff4;border-radius:11px;pointer-events:none}.die[data-color="0"]{background:linear-gradient(145deg,#fffefa,#dbcdec);--pip:#56416d}.die[data-color="1"]{background:linear-gradient(145deg,#ffe5a4,#e9a658);--pip:#845524}.die[data-color="2"]{background:linear-gradient(145deg,#b9fce5,#56bc9d);--pip:#296552}.die[data-color="3"]{background:linear-gradient(145deg,#e9d2ff,#a079e5);--pip:#5a3a88}.die[data-color="4"]{background:linear-gradient(145deg,#ffc8db,#e979a3);--pip:#883a58}.die[data-color="5"]{background:linear-gradient(145deg,#d2f3ff,#74b6e0);--pip:#3b6487}
+.dice-field.crowded{gap:14px 18px}.dice-field.crowded .die{width:43px;height:43px;padding:6px;border-radius:11px}.dice-field.crowded .pip{width:6px;height:6px}
+.die.rolling{animation:boardroll .56s cubic-bezier(.2,.65,.3,1) both}.die.hit{filter:brightness(1.18);box-shadow:inset 0 2px #fff9,5px 7px 0 #58537d,0 0 22px var(--glow),8px 17px 12px #0006}
+@keyframes boardroll{0%{transform:rotate(7deg) scale(1)}28%{transform:translate(5px,-35px) rotate(-120deg) scale(.92)}58%{transform:translate(-4px,-24px) rotate(160deg) scale(.96)}80%{transform:translate(0,3px) rotate(367deg) scale(1.08,.92)}100%{transform:rotate(367deg) scale(1)}}
+.ghost-die{position:relative;display:grid;place-items:center;width:45px;height:45px;border:1px dashed #d4b5ff55;border-radius:12px;color:#c6afff66;font-size:23px;transform:rotate(7deg);background:#30254755}
+.obelisks{position:absolute;inset:0;z-index:2;pointer-events:none}.crystal{position:absolute;width:15px;height:35px;background:linear-gradient(100deg,#d9c4ff,#9770df 46%,#503d85 47%,#c0a4f3);clip-path:polygon(50% 0,100% 26%,85% 89%,50% 100%,5% 80%,0 27%);filter:drop-shadow(0 0 10px var(--glow));bottom:27px;left:3px;transform:rotate(-17deg)}.crystal:nth-child(2){left:20px;bottom:22px;width:12px;height:24px;transform:rotate(15deg)}.crystal:nth-child(3){left:auto;right:0;bottom:56px;height:44px;transform:rotate(15deg)}.crystal:nth-child(4){left:auto;right:18px;bottom:55px;height:26px}
+.arena-caption{bottom:11px;font-size:9px;color:#b2a2c5;letter-spacing:.3px}.world-line{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:11px;font-size:10px;color:var(--muted)}.world-line b{color:#e5dbf9;font-size:11px}.world-line span{font-variant-numeric:tabular-nums}.world-progress{height:3px;border-radius:4px;background:#aaa1c822;margin-top:7px;overflow:hidden}.world-progress div{height:100%;background:linear-gradient(90deg,#ac88ff,#f4d3a2);transition:width .3s}
+.roll-btn{margin-top:15px;min-height:62px;color:#302041;background:linear-gradient(105deg,#f6dcb0,#e4b483);box-shadow:0 7px 0 #75516a,0 12px 22px #0004,inset 0 2px #fff8;letter-spacing:1.8px}.roll-btn:active{transform:translateY(4px) scale(.99);box-shadow:0 3px 0 #75516a}.roll-btn.cooling{filter:saturate(.7);opacity:.7}
+.focus-wrap{display:flex;align-items:center;gap:10px;margin-top:18px}.focus-wrap small{font-size:9px;color:#aaa4c4;font-weight:750;white-space:nowrap}.focus-track{height:6px;flex:1;background:#aaa1c822;border-radius:8px;overflow:hidden}.focus-track div{height:100%;background:linear-gradient(90deg,#af92ec,#f2cc94);width:0%;transition:width .15s}.focus-wrap.hot small{color:#ffe0a3}.focus-wrap.hot .focus-track div{background:#ffe0a3;box-shadow:0 0 10px #ffc965}.minirow{margin-top:13px}.small-panel{background:#211d37;padding:12px;min-height:67px}.skill{background:linear-gradient(110deg,#302344,#251e36)}.skill .left small{display:block;margin-top:4px;font-size:9px;color:#ada5c9}.skill span{font-size:9px}.up-card,.card{background:linear-gradient(120deg,#27213f,#19192e)}.challenge{background:#24213a}.bottom{background:#141126ed}.tab.active{background:#3b2c50;color:#f6dfbe}.pill{border-color:#d5b28244;background:#d5b28211;color:#e9c595}.buy{min-height:46px;background:#423254;border-color:#b995d355}.buy span{color:#f0d1a2}.coin-float{top:46%;font-size:28px;color:#ffe1a0;animation:floatup 1.15s ease-out forwards}.coin-float.crit{font-size:30px;color:#e9baff}.reward-label{position:absolute;z-index:7;top:20%;left:0;right:0;text-align:center;color:#ffe4ab;text-shadow:0 2px 8px #000;font-size:14px;letter-spacing:2px;font-weight:900;pointer-events:none;animation:labelPop 1s both}.particle{position:absolute;left:50%;top:51%;width:5px;height:5px;background:var(--spark,#ffe1a0);border-radius:2px;z-index:6;pointer-events:none;box-shadow:0 0 7px var(--spark,#ffe1a0);animation:spark .8s ease-out forwards}@keyframes spark{to{transform:translate(var(--dx),var(--dy)) rotate(160deg);opacity:0}}@keyframes labelPop{0%{opacity:0;transform:scale(.65) translateY(10px)}20%{opacity:1;transform:scale(1.08)}70%{opacity:1}100%{opacity:0;transform:translateY(-20px)}}.arena.burst{animation:arenaPulse .5s ease-out}@keyframes arenaPulse{35%{box-shadow:0 0 35px #f5c57a50,inset 0 0 28px #e5b98522}}.arena.fever{border-color:#e9c59588}.quick-up{display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding:12px 14px;border:1px solid #d5b28233;border-radius:14px;background:#282039;width:100%;text-align:left;min-height:48px}.quick-up b{font-size:11px;color:#e8cba1}.quick-up span{font-size:10px;color:#b8accb}.section-head .pill{font-size:9px}
+.settings-row button{min-height:36px}.file-input{display:none}.update-banner{position:fixed;z-index:60;top:calc(env(safe-area-inset-top) + 10px);left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:490px;padding:12px;border-radius:14px;background:#f5d8a9;color:#372341;box-shadow:0 8px 35px #0006;display:flex;align-items:center;justify-content:space-between;font-size:12px;gap:10px}.update-banner[hidden]{display:none}.update-banner button{padding:10px;background:#372341;color:#f5d8a9;border-radius:9px;font-size:11px;font-weight:800}.motion-off *, .motion-off *:before,.motion-off *:after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+@media(max-width:370px){.app{padding-left:12px;padding-right:12px}.die{width:52px;height:52px;padding:8px}.pip{width:8px;height:8px}.dice-field{gap:16px}.stats{padding:13px 16px}.level{font-size:8px}.world-line{font-size:9px}.arena{min-height:302px}.table-scene{height:207px}.item-desc{font-size:9px}.up-card{grid-template-columns:34px minmax(0,1fr) auto;gap:8px}.item-icon{width:32px;height:36px;font-size:19px}.buy{min-width:70px}}
+
   </style>
 </head>
 <body>
   <div class="app">
     <header>
-      <div class="brand"><div class="logo">🎲</div><div><strong>ROLLVERSE</strong><small>INCREMENTAL UNIVERSE</small></div></div>
+      <div class="brand"><div class="logo">🎲</div><div><strong>ROLLVERSE</strong><small>THE LONG GAME · v0.2</small></div></div>
       <div class="level" id="levelBadge">✦ UNIVERSUM 01</div>
     </header>
     <div class="stats">
@@ -140,18 +162,21 @@
     </div>
     <main>
       <section class="page" id="page-play">
-        <div class="section-head"><h2>Die Würfelarena</h2><div class="pill" id="comboTag">✦ KOMBO x1</div></div>
+        <div class="section-head"><h2 id="worldTitle">Mondschein-Taverne</h2><div class="pill" id="comboTag">✦ KOMBO x1</div></div>
         <div class="arena" id="arena" role="button" tabindex="0" aria-label="Würfel werfen">
-          <div class="arena-head"><strong>◉ WÜRFEL-RESONANZ</strong><span id="arenaRuns">0 Würfe</span></div>
-          <div class="dice-field" id="diceField"></div>
-          <div class="arena-caption">Tippe auf die Würfel oder den Button</div>
+          <div class="arena-head"><strong>✦ DEIN WÜRFELBRETT</strong><span id="arenaRuns">0 Würfe</span></div>
+          <div class="table-scene"><div class="board-plinth" aria-hidden="true"><div class="board-runes"><span>✦ · ✧</span><span>✧ · ✦</span></div></div><div class="obelisks" aria-hidden="true"><i class="crystal"></i><i class="crystal"></i><i class="crystal"></i><i class="crystal"></i></div><div class="dice-field" id="diceField"></div></div>
+          <div class="arena-caption">Jeder Wurf bringt dich einen Schritt weiter.</div>
         </div>
+        <div class="world-line"><b id="worldName">✦ MONDSCHEIN</b><span id="worldUnlock">Nächste Welt: 75 K ◈</span></div><div class="world-progress"><div id="worldProgress"></div></div>
         <button class="roll-btn" id="rollBtn"><span class="emoji">🎲</span> WÜRFELN <span class="emoji">✦</span></button>
+        <div class="focus-wrap" id="focusWrap"><small id="focusLabel">FOKUS 0 / 30</small><div class="focus-track"><div id="focusProgress"></div></div><small>×1,5 BOOST</small></div>
+        <button class="quick-up" id="quickUpgrade"><b>+1 Würfel freischalten</b><span>150 ◈ →</span></button>
         <div class="minirow">
           <div class="small-panel"><small>Letzter Wurf</small><strong id="lastDisplay">—</strong></div>
           <div class="small-panel"><small>Aktuell gesammelt</small><strong id="earnedDisplay">0 ◈</strong></div>
         </div>
-        <button class="skill" id="skillBtn"><div class="left"><i>⚡</i><div><strong>OVERDRIVE</strong><small>12 Sekunden x2 Einkommen</small></div></div><span id="skillState">AKTIVIEREN</span></button>
+        <button class="skill" id="skillBtn"><div class="left"><i>⚡</i><div><strong>OVERDRIVE</strong><small>10 Sekunden ×2 · 3 Minuten Erholung</small></div></div><span id="skillState">AKTIVIEREN</span></button>
         <div class="challenge" id="questBox"></div>
       </section>
       <section class="page" id="page-upgrades" hidden>
@@ -164,9 +189,9 @@
         <div class="card prestige-head">
           <div class="eyebrow">Dein nächster Neustart bringt</div>
           <div class="star-number" id="prestigeGain">+0 ✦</div>
-          <p class="muted" id="prestigeInfo">Verdiene 10.000 ◈ in einem Durchlauf, um Prestige freizuschalten.</p>
+          <p class="muted" id="prestigeInfo">Verdiene 2.000.000 ◈ in einem Durchlauf, um Prestige freizuschalten.</p>
           <div class="progress"><div id="prestigeProgress"></div></div>
-          <div class="flexline"><span class="meta" id="prestigeProgressText">0 / 10.000</span><span class="meta" id="prestigeMultiplier">Dauerhafter Bonus: x1</span></div>
+          <div class="flexline"><span class="meta" id="prestigeProgressText">0 / 2.000.000</span><span class="meta" id="prestigeMultiplier">Dauerhafter Bonus: x1</span></div>
           <button id="prestigeBtn" class="prestige-button" disabled>✦ UNIVERSUM NEU STARTEN</button>
         </div>
         <div class="sub-heading"><h3>✨ Permanente Talente</h3><span class="meta" id="starsAvailable">0 ✦ verfügbar</span></div>
@@ -180,10 +205,13 @@
         <div class="sub-heading"><h3>Einstellungen</h3></div>
         <div class="card">
           <div class="settings-row"><b>Sounds</b><button class="switch" id="soundToggle">AN</button></div>
+          <div class="settings-row"><b>Ruhige Animationen</b><button class="switch" id="motionToggle">AUS</button></div>
+          <div class="settings-row"><b>Spielstand sichern</b><button class="switch" id="exportBtn">EXPORT</button></div>
+          <div class="settings-row"><b>Sicherung laden</b><button class="switch" id="importBtn">IMPORT</button><input class="file-input" id="importFile" type="file" accept="application/json,.json"></div>
           <div class="settings-row" style="border-bottom:0"><b>Spielstand zurücksetzen</b><button class="switch" id="resetBtn">ZURÜCKSETZEN</button></div>
           <p class="muted" style="margin-top:6px">Dein Spielstand wird lokal auf diesem Gerät in diesem Browser gespeichert. Es gibt noch keine Cloud-Synchronisierung.</p>
         </div>
-        <p class="footer-note">ROLLVERSE · Prototyp 0.1 · Mit Liebe zu großen Zahlen ✦</p>
+        <p class="footer-note">ROLLVERSE · 0.2 · THE LONG GAME ✦</p>
       </section>
     </main>
   </div>
@@ -193,32 +221,44 @@
     <button class="tab" data-tab="prestige"><span class="tab-icon">✦</span>PRESTIGE</button>
     <button class="tab" data-tab="collection"><span class="tab-icon">🏆</span>SAMMLUNG</button>
   </nav>
+  <div class="update-banner" id="updateBanner" hidden><b>Neue Version bereit</b><button id="updateBtn">UPDATE LADEN</button></div>
   <div class="toast" role="status" id="toast"></div>
   <script>
   'use strict';
   const SAVE_KEY = 'rollverse-v1';
+  const VERSION='0.2.0', PRESTIGE_BASE=2000000;
   const upgradeDefs = {
-    dice: { icon:'🎲', name:'Mehr Würfel', desc:'+1 Würfel pro Wurf', base:14, scale:1.82, cap:11 },
-    power: { icon:'💎', name:'Würfelwert', desc:'+30 % Grundwert je Level', base:25, scale:1.52, cap:100 },
-    auto: { icon:'🤖', name:'Wurfroboter', desc:'Würfelt automatisch und immer schneller', base:72, scale:1.90, cap:35 },
-    tap: { icon:'👆', name:'Klick-Power', desc:'+35 % Ertrag bei manuellen Würfen', base:44, scale:1.58, cap:100 },
-    crit: { icon:'💥', name:'Kritische Würfe', desc:'+4 % Chance auf dreifachen Gewinn', base:95, scale:1.9, cap:19 },
-    combo: { icon:'🔗', name:'Resonanz', desc:'+40 % auf Würfelkombinationen', base:180, scale:1.92, cap:50 },
-    lucky: { icon:'🌟', name:'Sternenwürfel', desc:'+2 % Chance auf fünffachen Gewinn', base:330, scale:1.95, cap:32 }
+    dice:{icon:'🎲',name:'Mehr Würfel',desc:'+1 Würfel. Mehr Chancen auf Kombos.',base:150,scale:2.65,cap:11},
+    power:{icon:'💎',name:'Würfelwert',desc:'+12 % Grundwert je Level',base:100,scale:1.72,cap:100},
+    auto:{icon:'⚙️',name:'Wurfroboter',desc:'Start: alle 7 Sek. · danach 9,5 % schneller',base:2800,scale:2.15,cap:35},
+    tap:{icon:'👆',name:'Klick-Power',desc:'+15 % manueller Ertrag je Level',base:180,scale:1.78,cap:100},
+    crit:{icon:'💥',name:'Kritische Würfe',desc:'+1 % Chance auf dreifachen Gewinn',base:1500,scale:2.05,cap:19},
+    combo:{icon:'🔗',name:'Resonanz',desc:'+8 % auf den Zusatzgewinn bei Kombos',base:3800,scale:2.12,cap:50},
+    lucky:{icon:'✧',name:'Sternenwürfel',desc:'+0,3 % Chance auf fünffachen Gewinn',base:18000,scale:2.30,cap:32}
   };
   const metaDefs = {
-    power: { icon:'🌌', name:'Kosmischer Schub', desc:'+25 % auf alle Einnahmen (permanent)', base:1, scale:1.55, cap:30 },
-    headstart: { icon:'🚀', name:'Startkapital', desc:'Jeder Neustart startet mit extra Guthaben', base:2, scale:2, cap:15 },
-    speed: { icon:'⏱️', name:'Quantentakt', desc:'Automatische Würfe +12 % schneller', base:2, scale:1.7, cap:20 },
-    fortune: { icon:'🍀', name:'Ewiges Glück', desc:'+1,5 % Krit-Chance dauerhaft', base:3, scale:1.85, cap:15 }
+    power:{icon:'🌌',name:'Kosmischer Schub',desc:'+15 % auf alle Einnahmen (permanent)',base:1,scale:1.85,cap:30},
+    headstart:{icon:'🚀',name:'Startkapital',desc:'+150 ◈ Startguthaben je Level',base:2,scale:2.15,cap:15},
+    speed:{icon:'⏱️',name:'Quantentakt',desc:'Automatische Würfe +5 % schneller',base:3,scale:1.9,cap:20},
+    fortune:{icon:'🍀',name:'Ewiges Glück',desc:'+0,5 % Krit-Chance dauerhaft',base:3,scale:2.1,cap:15}
   };
   const quests = [
-    { title:'Der erste Schwung', desc:'Würfle insgesamt 20-mal', type:'rolls', target:20, reward:180 },
-    { title:'Münzsammler', desc:'Verdiene 2.500 ◈ in diesem Universum', type:'earned', target:2500, reward:850 },
-    { title:'Würfelparade', desc:'Sammle mindestens 6 Würfel', type:'dice', target:6, reward:3000 },
-    { title:'Eine neue Galaxie', desc:'Verdiene 30.000 ◈ in einem Durchlauf', type:'earned', target:30000, reward:12000 },
-    { title:'Neuanfang', desc:'Führe dein erstes Prestige durch', type:'prestiges', target:1, reward:25000 },
-    { title:'Millionär', desc:'Verdiene 1 Million ◈ in einem Durchlauf', type:'earned', target:1000000, reward:250000 }
+    {title:'Warm werden',desc:'Würfle 50-mal von Hand',type:'manual',target:50,reward:40},
+    {title:'Ein echtes Duo',desc:'Schalte den zweiten Würfel frei',type:'dice',target:2,reward:80},
+    {title:'Dranbleiben',desc:'Würfle 250-mal von Hand',type:'manual',target:250,reward:150},
+    {title:'Die Maschine',desc:'Kaufe deinen ersten Wurfroboter',type:'auto',target:1,reward:250},
+    {title:'Würfelquartett',desc:'Sammle mindestens 4 Würfel',type:'dice',target:4,reward:400},
+    {title:'Der lange Weg',desc:'Verdiene insgesamt 75.000 ◈',type:'lifetime',target:75000,reward:1000},
+    {title:'Handarbeit',desc:'Würfle 2.500-mal von Hand',type:'manual',target:2500,reward:1500},
+    {title:'Die erste Million',desc:'Verdiene insgesamt 1 Million ◈',type:'lifetime',target:1000000,reward:5000},
+    {title:'Eine neue Galaxie',desc:'Führe dein erstes Prestige durch',type:'prestiges',target:1,reward:150},
+    {title:'Sternenmeister',desc:'Sammle insgesamt 10 Sternenstaub',type:'dust',target:10,reward:10000}
+  ];
+  const worlds=[
+    {name:'Mondschein-Taverne',short:'MONDSCHEIN',at:0},
+    {name:'Der Smaragdgarten',short:'SMARAGDGARTEN',at:75000},
+    {name:'Die Frostzitadelle',short:'FROSTZITADELLE',at:1500000},
+    {name:'Tempel der Morgenröte',short:'MORGENRÖTE',at:25000000}
   ];
   const achievements = [
     ['🎲','Los geht’s','Würfle 1-mal', s=>s.totalRolls>=1],
@@ -230,16 +270,22 @@
     ['🏆','Vielspieler','Würfle insgesamt 1.000-mal', s=>s.totalRolls>=1000],
     ['🚀','Grenzenlos','Erreiche Prestige 10', s=>s.prestiges>=10]
   ];
-  const initState = () => ({ money:0,runEarned:0,totalEarned:0,totalRolls:0,manualRolls:0,prestiges:0,dust:0,totalDust:0,bestRun:0,mostDice:1,allAutoBought:0,up:{dice:0,power:0,auto:0,tap:0,crit:0,combo:0,lucky:0},meta:{power:0,headstart:0,speed:0,fortune:0},quest:0,overdriveUntil:0,overdriveReady:0,lastRoll:0,lastCombo:1,lastSeen:Date.now(),sound:true });
+  const initState = () => ({ money:0,runEarned:0,totalEarned:0,totalRolls:0,manualRolls:0,prestiges:0,dust:0,totalDust:0,bestRun:0,mostDice:1,allAutoBought:0,up:{dice:0,power:0,auto:0,tap:0,crit:0,combo:0,lucky:0},meta:{power:0,headstart:0,speed:0,fortune:0},quest:0,overdriveUntil:0,overdriveReady:0,lastRoll:0,lastCombo:1,lastSeen:Date.now(),sound:true,schema:2,motion:false,focus:0,feverUntil:0 });
   let state;
   try { const raw=localStorage.getItem(SAVE_KEY); state=raw?JSON.parse(raw):initState(); } catch(e){ state=initState(); }
   if(!state || typeof state!=='object' || !state.up || !state.meta) state=initState();
+  const migrated=state.schema!==2;
   state={...initState(),...state,up:{...initState().up,...state.up},meta:{...initState().meta,...state.meta}};
+  if(migrated){try{localStorage.setItem('rollverse-v1-before-0.2',JSON.stringify(state));}catch(e){}state.schema=2;state.focus=0;state.feverUntil=0;}
   // Sanitize saved numeric fields to avoid rendering invalid state.
-  for(const field of ['money','runEarned','totalEarned','totalRolls','manualRolls','prestiges','dust','totalDust','bestRun','mostDice','allAutoBought','quest','overdriveUntil','overdriveReady','lastRoll','lastCombo','lastSeen']){
+  for(const field of ['money','runEarned','totalEarned','totalRolls','manualRolls','prestiges','dust','totalDust','bestRun','mostDice','allAutoBought','quest','overdriveUntil','overdriveReady','lastRoll','lastCombo','lastSeen','focus','feverUntil']){
     if(!Number.isFinite(state[field]) || state[field]<0) state[field]=initState()[field];
   }
   for(const group of ['up','meta']) for(const [key,val] of Object.entries(state[group])) if(!Number.isFinite(val) || val<0) state[group][key]=0;
+  for(const [group,defs] of [['up',upgradeDefs],['meta',metaDefs]])for(const key of Object.keys(defs))state[group][key]=Math.min(defs[key].cap,Math.floor(state[group][key]));
+  state.quest=Math.min(100000,Math.floor(state.quest));state.focus=Math.min(29,Math.floor(state.focus));
+  document.body.classList.toggle('motion-off',!!state.motion);
+  let lastManual=-Infinity,visualUntil=0,hiddenAt=null;
   let activePage='play',lastTick=Date.now(),lastSave=0,lastRender=0,autoAccumulator=0,lastToast=0,audioContext=null;
   const $=id=>document.getElementById(id);
   const fmt=n=>{
@@ -251,17 +297,30 @@
   };
   function cost(def,lvl){return Math.ceil(def.base*Math.pow(def.scale,lvl));}
   function diceCount(){return 1+state.up.dice;}
-  function multiplier(){return (1+state.up.power*.30)*(1+state.meta.power*.25);}
-  function critChance(){return Math.min(.94,.06+state.up.crit*.04+state.meta.fortune*.015);}
-  function luckyChance(){return Math.min(.75,.03+state.up.lucky*.02);}
-  function autoInterval(){if(!state.up.auto) return Infinity;return Math.max(.20,2.9/Math.pow(1.19,state.up.auto-1)/(1+state.meta.speed*.12));}
+  function multiplier(){return (1+state.up.power*.12)*(1+state.meta.power*.15);}
+  function critChance(){return Math.min(.45,.025+state.up.crit*.01+state.meta.fortune*.005);}
+  function luckyChance(){return Math.min(.12,.005+state.up.lucky*.003);}
+  function autoInterval(){if(!state.up.auto) return Infinity;return Math.max(.8,7/Math.pow(1.095,state.up.auto-1)/(1+state.meta.speed*.05));}
+  let comboCacheKey='',comboCache=1;
+  function comboByCount(count){
+    const base=count<2?1:count===2?1.3:count===3?1.9:count===4?2.8:3.5+(count-5)*.7;
+    return 1+(base-1)*(1+state.up.combo*.08);
+  }
+  // Exact expected combo over the six-face occupancy distribution.
+  function expectedCombo(){
+    const n=diceCount(),key=n+':'+state.up.combo;if(key===comboCacheKey)return comboCache;
+    const factorial=[1];for(let i=1;i<=n;i++)factorial[i]=factorial[i-1]*i;
+    let sum=0;function visit(face,left,denom,max){
+      if(face===5){sum+=factorial[n]/(denom*factorial[left])/Math.pow(6,n)*comboByCount(Math.max(max,left));return;}
+      for(let count=0;count<=left;count++)visit(face+1,left-count,denom*factorial[count],Math.max(max,count));
+    }visit(0,n,1,0);comboCacheKey=key;comboCache=sum;return sum;
+  }
   function expectedRoll(isManual=false){
-    const luck=1+critChance()*2+luckyChance()*4;
-    const comboChance=1+.12*(1+state.up.combo*.4)*Math.max(0,diceCount()-1);
-    return 3.5*diceCount()*multiplier()*luck*comboChance*(isManual?1+state.up.tap*.35:1);
+    return 3.5*diceCount()*multiplier()*(1+critChance()*2)*(1+luckyChance()*4)*expectedCombo()*(isManual?1+state.up.tap*.15:1);
   }
   function perSecond(){return Number.isFinite(autoInterval())?expectedRoll()/autoInterval():0;}
-  function prestigeGain(){return Math.floor(Math.sqrt(state.runEarned/10000));}
+  function prestigeTarget(){return PRESTIGE_BASE*Math.pow(1.32,state.prestiges);}
+  function prestigeGain(){return Math.floor(Math.sqrt(state.runEarned/prestigeTarget()));}
   function addIncome(amount){
     if(!Number.isFinite(amount)||amount<=0) return;
     state.money+=amount;state.runEarned+=amount;state.totalEarned+=amount;state.bestRun=Math.max(state.bestRun,state.runEarned);
@@ -281,33 +340,34 @@
   const facePositions={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
   function dieHtml(face,index){return `<div class="die" data-color="${index%6}" style="--rot:${index%2?-7:6}deg" aria-label="Würfel ${index+1}: ${face}"><div class="pips">${Array.from({length:9},(_,i)=>facePositions[face].includes(i)?'<span class="pip"></span>':'<span></span>').join('')}</div></div>`;}
   let lastFaces=[1];
-  function drawDice(animate=false){
-    const n=diceCount();if(lastFaces.length!==n) lastFaces=Array.from({length:n},()=>1+Math.floor(Math.random()*6));
-    $('diceField').innerHTML=lastFaces.map((v,i)=>dieHtml(v,i)).join('');
-    if(animate) $('diceField').querySelectorAll('.die').forEach((el,i)=>{el.style.animationDelay=(i%4)*.035+'s';el.classList.add('rolling');});
+  function drawDice(animate=false,hit=false){
+    const n=diceCount();if(lastFaces.length!==n)lastFaces=Array.from({length:n},()=>1+Math.floor(Math.random()*6));
+    const field=$('diceField');field.classList.toggle('crowded',n>6);
+    field.innerHTML=lastFaces.map((v,i)=>dieHtml(v,i)).join('')+(n<3?'<div class="ghost-die" aria-hidden="true">+</div>':'');
+    field.querySelectorAll('.die').forEach((el,i)=>{if(hit)el.classList.add('hit');if(animate){el.style.animationDelay=(i%4)*.025+'s';el.classList.add('rolling');}});
   }
-  function comboFactor(faces){
-    const counts={};faces.forEach(v=>counts[v]=(counts[v]||0)+1);
-    let maxCount=Math.max(...Object.values(counts));
-    if(maxCount<2)return 1;
-    return (maxCount===2?1.6:maxCount===3?3:maxCount===4?6:10*Math.pow(1.6,maxCount-5))*(1+state.up.combo*.4);
-  }
-  function floatCoin(amount,crit=false){
-    if(activePage!=='play') return;
-    const arena=$('arena'),el=document.createElement('div');el.className='coin-float'+(crit?' crit':'');el.textContent='+'+fmt(amount)+' ◈';
-    arena.appendChild(el);setTimeout(()=>el.remove(),1000);
+  function comboFactor(faces){const counts={};faces.forEach(v=>counts[v]=(counts[v]||0)+1);return comboByCount(Math.max(...Object.values(counts)));}
+  function rewardEffects(amount,crit,lucky,combo,manual){
+    if(activePage!=='play'||document.hidden)return;
+    const arena=$('arena');if(arena.querySelectorAll('.coin-float').length>=3)return;
+    const el=document.createElement('div');el.className='coin-float'+(crit||lucky?' crit':'');el.textContent='+'+fmt(amount)+' ◈';arena.appendChild(el);setTimeout(()=>el.remove(),1150);
+    const big=crit||lucky||combo>=1.9;if(!big)return;
+    arena.classList.remove('burst');void arena.offsetWidth;arena.classList.add('burst');
+    const label=document.createElement('div');label.className='reward-label';label.textContent=lucky?'✧ STERNENWURF ×5':crit?'KRITISCH ×3':'RESONANZ ×'+combo.toFixed(1);arena.appendChild(label);setTimeout(()=>label.remove(),1000);
+    if(state.motion||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    for(let i=0;i<14;i++){const spark=document.createElement('i');spark.className='particle';const angle=i/14*Math.PI*2,distance=45+Math.random()*65;spark.style.setProperty('--dx',Math.cos(angle)*distance+'px');spark.style.setProperty('--dy',Math.sin(angle)*distance+'px');spark.style.setProperty('--spark',lucky?'#ffe1a0':crit?'#e4b8ff':'#9aefcf');arena.appendChild(spark);setTimeout(()=>spark.remove(),850);}
+    if(manual&&navigator.vibrate)navigator.vibrate(lucky?[12,30,20]:12);
   }
   function roll(manual){
-    const faces=Array.from({length:diceCount()},()=>1+Math.floor(Math.random()*6));lastFaces=faces;
-    let combo=comboFactor(faces);
-    const crit=Math.random()<critChance(),lucky=Math.random()<luckyChance();
-    let reward=faces.reduce((a,b)=>a+b,0)*multiplier()*combo*(manual?1+state.up.tap*.35:1)*(crit?3:1)*(lucky?5:1);
-    if(Date.now()<state.overdriveUntil)reward*=2;
-    addIncome(reward);state.totalRolls++;if(manual)state.manualRolls++;
-    state.lastRoll=reward;state.lastCombo=combo;
-    state.mostDice=Math.max(state.mostDice,diceCount());
-    if(manual){sound();floatCoin(reward,crit||lucky||combo>=3);}
-    if(manual||activePage==='play' && state.totalRolls%3===0)drawDice(manual);
+    const now=Date.now();if(manual&&now-lastManual<650)return false;if(manual)lastManual=now;
+    const faces=Array.from({length:diceCount()},()=>1+Math.floor(Math.random()*6));
+    const combo=comboFactor(faces),crit=Math.random()<critChance(),lucky=Math.random()<luckyChance();
+    let reward=faces.reduce((a,b)=>a+b,0)*multiplier()*combo*(manual?1+state.up.tap*.15:1)*(crit?3:1)*(lucky?5:1);
+    if(now<state.overdriveUntil)reward*=2;if(manual&&now<state.feverUntil)reward*=1.5;
+    addIncome(reward);state.totalRolls++;if(manual){state.manualRolls++;if(now>=state.feverUntil){state.focus++;if(state.focus>=30){state.focus=0;state.feverUntil=now+8000;toast('✦ FOKUS! 8 Sekunden ×1,5 auf manuelle Würfe');}}}
+    state.lastRoll=reward;state.lastCombo=combo;state.mostDice=Math.max(state.mostDice,diceCount());
+    if(manual||now>visualUntil){lastFaces=faces;drawDice(true,crit||lucky);visualUntil=now+600;rewardEffects(reward,crit,lucky,combo,manual);}
+    if(manual){sound();$('rollBtn').classList.add('cooling');setTimeout(()=>$('rollBtn').classList.remove('cooling'),650);}return true;
   }
   function upgrade(key){
     const def=upgradeDefs[key],lv=state.up[key];if(!def||lv>=def.cap)return;
@@ -328,16 +388,17 @@
     const earned=prestigeGain();if(earned<1)return;
     if(!confirm(`Du erhältst ${fmt(earned)} ✦ Sternenstaub. Dein Geld, deine Würfel und normalen Upgrades werden zurückgesetzt. Permanente Talente bleiben. Prestige durchführen?`))return;
     state.prestiges++;state.dust+=earned;state.totalDust+=earned;
-    const cash=state.meta.headstart?Math.floor(100*Math.pow(5,state.meta.headstart-1)):0;
-    state.up={...initState().up};state.money=cash;state.runEarned=0;state.overdriveUntil=0;state.overdriveReady=0;
+    const cash=state.meta.headstart?150*state.meta.headstart:0;
+    state.up={...initState().up};state.money=cash;state.runEarned=0;state.overdriveUntil=0;state.overdriveReady=0;state.focus=0;state.feverUntil=0;
     lastFaces=[1];autoAccumulator=0;drawDice();save();toast(`✦ Prestige ${state.prestiges}! +${fmt(earned)} Sternenstaub erhalten`);
     changePage('prestige');render(true);
   }
-  function questProgress(q){if(q.type==='rolls')return state.totalRolls;if(q.type==='earned')return state.runEarned;if(q.type==='dice')return diceCount();if(q.type==='prestiges')return state.prestiges;return 0;}
-  function claimQuest(){const q=quests[state.quest];if(!q||questProgress(q)<q.target)return;addIncome(q.reward);state.quest++;sound();save();toast('Mission erfüllt! +'+fmt(q.reward)+' ◈');render(true);}
-  function activateOverdrive(){const now=Date.now();if(now<state.overdriveReady)return;state.overdriveUntil=now+12000;state.overdriveReady=now+85000;sound();toast('⚡ OVERDRIVE AKTIV – 12 Sekunden doppelter Ertrag!');render(true);}
+  function questProgress(q){if(q.type==='manual')return state.manualRolls;if(q.type==='auto')return state.allAutoBought;if(q.type==='lifetime')return state.totalEarned;if(q.type==='dust')return state.totalDust;if(q.type==='rolls')return state.totalRolls;if(q.type==='earned')return state.runEarned;if(q.type==='dice')return diceCount();if(q.type==='prestiges')return state.prestiges;return 0;}
+  function currentQuest(){if(state.quest<quests.length)return quests[state.quest];const tier=state.quest-quests.length+1,target=5000*tier;return {title:'Handwerksauftrag '+tier,desc:'Erreiche '+fmt(target)+' manuelle Würfe insgesamt',type:'manual',target,reward:Math.round(750*Math.pow(tier,1.2))};}
+  function claimQuest(){const q=currentQuest();if(!q||questProgress(q)<q.target)return;addIncome(q.reward);state.quest++;sound();save();toast('Mission erfüllt! +'+fmt(q.reward)+' ◈');render(true);}
+  function activateOverdrive(){const now=Date.now();if(now<state.overdriveReady)return;state.overdriveUntil=now+10000;state.overdriveReady=now+180000;sound();toast('⚡ OVERDRIVE AKTIV – 10 Sekunden doppelter Ertrag!');render(true);}
   function renderQuest(){
-    const q=quests[state.quest],el=$('questBox');
+    const q=currentQuest(),el=$('questBox');
     if(!q){if(el.dataset.stamp!=='done'){el.innerHTML='<div class="challenge-top"><b>🏆 Alle Missionen erfüllt!</b><small>LEGENDÄR</small></div><p class="muted">Du hast bereits alle Missionen dieses Prototyps geschafft.</p>';el.dataset.stamp='done';}return;}
     const current=questProgress(q),done=current>=q.target,pct=Math.min(100,100*current/q.target),stamp=state.quest+':'+done;
     if(el.dataset.stamp!==stamp){
@@ -383,38 +444,45 @@
       $('earnedDisplay').textContent=fmt(state.runEarned)+' ◈';
       const skillText=now<state.overdriveUntil?`AKTIV ${Math.ceil((state.overdriveUntil-now)/1000)}s`:now<state.overdriveReady?`BEREIT IN ${Math.ceil((state.overdriveReady-now)/1000)}s`:'AKTIVIEREN';
       $('skillState').textContent=skillText;$('skillBtn').disabled=now<state.overdriveReady;
+      const fever=now<state.feverUntil;$('focusWrap').classList.toggle('hot',fever);$('arena').classList.toggle('fever',fever);
+      $('focusLabel').textContent=fever?'FOKUS '+Math.ceil((state.feverUntil-now)/1000)+'s':'FOKUS '+state.focus+' / 30';$('focusProgress').style.width=(fever?100*(state.feverUntil-now)/8000:100*state.focus/30)+'%';
+      const world=worlds.reduce((best,w,i)=>state.totalEarned>=w.at?i:best,0),next=worlds[world+1];
+      $('arena').dataset.world=world;$('worldTitle').textContent=worlds[world].name;$('worldName').textContent='✦ '+worlds[world].short;
+      $('worldUnlock').textContent=next?'Nächste Welt: '+fmt(next.at)+' ◈':'Alle Welten freigeschaltet';$('worldProgress').style.width=(next?Math.min(100,100*(state.totalEarned-worlds[world].at)/(next.at-worlds[world].at)):100)+'%';
+      const dc=cost(upgradeDefs.dice,state.up.dice),max=state.up.dice>=upgradeDefs.dice.cap;
+      $('quickUpgrade').disabled=max||state.money<dc;$('quickUpgrade').innerHTML='<b>'+(max?'Würfelbrett vollständig':'+1 Würfel freischalten')+'</b><span>'+(max?'12 / 12':fmt(dc)+' ◈ →')+'</span>';
       renderQuest();
     } else if(activePage==='upgrades'){
       if(full || !$('upgradeList').children.length)renderUpgrades();
       else document.querySelectorAll('[data-up]').forEach(btn=>{const key=btn.dataset.up;btn.disabled=state.up[key]>=upgradeDefs[key].cap || state.money<cost(upgradeDefs[key],state.up[key]);});
     }
     else if(activePage==='prestige'){
-      const gained=prestigeGain(),target=10000*Math.pow(gained+1,2),previous=10000*gained*gained;
+      const gained=prestigeGain(),target=prestigeTarget()*Math.pow(gained+1,2),previous=prestigeTarget()*gained*gained;
       $('prestigeGain').textContent='+'+fmt(gained)+' ✦';
-      $('prestigeInfo').textContent=gained?'Mit Prestige behältst du deine permanenten Talente und startest stärker.':'Verdiene mindestens 10.000 ◈ in einem Durchlauf, um das erste Prestige freizuschalten.';
+      $('prestigeInfo').textContent=gained?'Mit Prestige behältst du deine permanenten Talente und startest stärker.':'Verdiene '+fmt(prestigeTarget())+' ◈ in diesem Durchlauf. Das Ziel steigt mit jedem Prestige um 32 %.';
       $('prestigeProgress').style.width=Math.min(100,Math.max(0,100*(state.runEarned-previous)/(target-previous)))+'%';
       $('prestigeProgressText').textContent=fmt(state.runEarned)+' / '+fmt(target)+' ◈';
-      $('prestigeMultiplier').textContent='Dauerhafter Bonus: x'+(1+state.meta.power*.25).toLocaleString('de-DE',{maximumFractionDigits:2});
+      $('prestigeMultiplier').textContent='Dauerhafter Bonus: x'+(1+state.meta.power*.15).toLocaleString('de-DE',{maximumFractionDigits:2});
       $('prestigeBtn').disabled=gained<1;
       $('starsAvailable').textContent=fmt(state.dust)+' ✦ verfügbar';
       if(full || !$('metaList').children.length)renderMeta();
     } else {
       $('allStats').innerHTML=`<div class="flexline"><span class="muted">Gesamt verdient</span><b>${fmt(state.totalEarned)} ◈</b></div><div class="settings-row"><span class="muted">Würfe insgesamt</span><b>${fmt(state.totalRolls)}</b></div><div class="settings-row"><span class="muted">Bester Durchlauf</span><b>${fmt(state.bestRun)} ◈</b></div><div class="settings-row"><span class="muted">Prestige-Stufe</span><b>${fmt(state.prestiges)}</b></div><div class="settings-row" style="border-bottom:0"><span class="muted">Gesammelter Sternenstaub</span><b>${fmt(state.totalDust)} ✦</b></div>`;
-      $('soundToggle').textContent=state.sound?'AN':'AUS';renderAchievements();
+      $('soundToggle').textContent=state.sound?'AN':'AUS';$('motionToggle').textContent=state.motion?'AN':'AUS';renderAchievements();
     }
   }
   function changePage(tab){activePage=tab;document.querySelectorAll('.page').forEach(p=>p.hidden=p.id!=='page-'+tab);document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));window.scrollTo({top:0,behavior:'instant'});render(true);}
+  function grantOffline(seconds){
+    if(seconds<=5||!state.up.auto)return 0;
+    const reward=perSecond()*Math.min(14400,Math.max(0,seconds))*.70;addIncome(reward);return reward;
+  }
   function calculateOffline(){
-    const now=Date.now(),elapsed=Math.min(14400,Math.max(0,(now-lastTick)/1000));
-    if(elapsed>5 && state.up.auto){const reward=perSecond()*elapsed*.8;addIncome(reward);toast('🌙 Offline-Bonus: +'+fmt(reward)+' ◈ ('+Math.floor(elapsed/60)+' min)');}
-    lastTick=now;autoAccumulator=0;save();render(true);
+    const now=Date.now(),reward=grantOffline((now-(hiddenAt===null?lastTick:hiddenAt))/1000);hiddenAt=null;lastTick=now;autoAccumulator=0;
+    if(reward)toast('☾ Offline: +'+fmt(reward)+' ◈ · 70 % Ertrag, bis 4 Stunden');save();render(true);
   }
-  // Saved session offline earnings, capped at four hours. 80% of estimated live income.
-  if(state.up.auto && Date.now()-state.lastSeen>5000){
-    const seconds=Math.min(14400,(Date.now()-state.lastSeen)/1000);
-    const reward=perSecond()*seconds*.8;addIncome(reward);
-    setTimeout(()=>toast('🌙 Willkommen zurück! +'+fmt(reward)+' ◈ im Offline-Modus'),550);
-  }
+  const offlineReward=grantOffline((Date.now()-state.lastSeen)/1000);
+  if(offlineReward)setTimeout(()=>toast('☾ Willkommen zurück! +'+fmt(offlineReward)+' ◈'),600);
+  else if(migrated)setTimeout(()=>toast('Version 0.2 · Spielstand übernommen. Der lange Weg beginnt!'),600);
   document.querySelectorAll('[data-tab]').forEach(el=>el.addEventListener('click',()=>changePage(el.dataset.tab)));
   $('rollBtn').addEventListener('click',()=>{roll(true);render(true);});
   $('arena').addEventListener('click',()=>{roll(true);render(true);});
@@ -422,11 +490,28 @@
   $('upgradeList').addEventListener('click',e=>{const btn=e.target.closest('[data-up]');if(btn)upgrade(btn.dataset.up);});
   $('metaList').addEventListener('click',e=>{const btn=e.target.closest('[data-meta]');if(btn)metaUpgrade(btn.dataset.meta);});
   $('prestigeBtn').addEventListener('click',prestige);
+  $('quickUpgrade').addEventListener('click',()=>upgrade('dice'));
   $('skillBtn').addEventListener('click',activateOverdrive);
   $('soundToggle').addEventListener('click',()=>{state.sound=!state.sound;save();render(true);});
   $('resetBtn').addEventListener('click',()=>{if(!confirm('Wirklich deinen GESAMTEN Spielstand löschen? Das kann nicht rückgängig gemacht werden.'))return;state=initState();lastFaces=[1];autoAccumulator=0;save();drawDice();changePage('play');toast('Neuer Spielstand gestartet');});
-  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')calculateOffline();else save();});
+  $('motionToggle').addEventListener('click',()=>{state.motion=!state.motion;document.body.classList.toggle('motion-off',state.motion);save();render(true);});
+  $('exportBtn').addEventListener('click',()=>{save();const blob=new Blob([JSON.stringify({game:'ROLLVERSE',version:VERSION,state},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='rollverse-spielstand.json';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),15000);toast('Spielstand exportiert');});
+  $('importBtn').addEventListener('click',()=>$('importFile').click());
+  $('importFile').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;try{
+    if(file.size>1000000)throw Error('size');const data=JSON.parse(await file.text()),candidate=data.state;
+    if(data.game!=='ROLLVERSE'||!candidate||typeof candidate!=='object'||!candidate.up||!candidate.meta)throw Error('format');
+    for(const key of Object.keys(initState()))if(typeof initState()[key]==='number'&&(!Number.isFinite(candidate[key]??initState()[key])||(candidate[key]??0)<0))throw Error('value');
+    for(const [group,defs] of [['up',upgradeDefs],['meta',metaDefs]])for(const key of Object.keys(defs)){const v=candidate[group][key]??0;if(!Number.isInteger(v)||v<0||v>defs[key].cap)throw Error('level');}
+    if(!confirm('Aktuellen Spielstand durch diese Sicherung ersetzen?'))return;
+    localStorage.setItem('rollverse-before-import',JSON.stringify(state));
+    state={...initState(),...candidate,up:{...initState().up,...candidate.up},meta:{...initState().meta,...candidate.meta},schema:2,lastSeen:Date.now()};
+    state.quest=Math.min(100000,Math.floor(state.quest));state.focus=Math.min(29,Math.floor(state.focus));state.feverUntil=Math.min(state.feverUntil,Date.now()+8000);state.overdriveUntil=Math.min(state.overdriveUntil,Date.now()+10000);
+    lastFaces=[];autoAccumulator=0;lastTick=Date.now();hiddenAt=null;document.body.classList.toggle('motion-off',!!state.motion);drawDice();save();changePage('play');toast('Spielstand wiederhergestellt');
+  }catch(err){toast('Diese Datei ist keine gültige ROLLVERSE-Sicherung.');}finally{e.target.value='';}});
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')calculateOffline();else{hiddenAt=Date.now();save();}});
+  window.addEventListener('pagehide',save);
   setInterval(()=>{
+    if(document.hidden)return;
     const now=Date.now(),delta=Math.max(0,Math.min(1,(now-lastTick)/1000));lastTick=now;
     if(state.up.auto){
       autoAccumulator+=delta;
@@ -437,7 +522,16 @@
     render();if(now-lastSave>2500)save();
   },200);
   drawDice();render(true);save();
-  if('serviceWorker'in navigator && location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(()=>{});
+  if('serviceWorker'in navigator && ['https:','http:'].includes(location.protocol)){
+    let pendingWorker=null;const showUpdate=worker=>{pendingWorker=worker;$('updateBanner').hidden=false;};
+    navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(reg=>{
+      if(reg.waiting)showUpdate(reg.waiting);
+      reg.addEventListener('updatefound',()=>{const worker=reg.installing;if(worker)worker.addEventListener('statechange',()=>{if(worker.state==='installed'&&navigator.serviceWorker.controller)showUpdate(worker);});});
+      reg.update().catch(()=>{});document.addEventListener('visibilitychange',()=>{if(!document.hidden)reg.update().catch(()=>{});});
+    }).catch(()=>{});
+    let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;save();location.reload();});
+    $('updateBtn').addEventListener('click',()=>{save();if(pendingWorker)pendingWorker.postMessage({type:'SKIP_WAITING'});else location.reload();});
+  }
   </script>
 </body>
 </html>
