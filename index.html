@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#090e21" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="ROLLVERSE" />
+  <meta name="description" content="ROLLVERSE – ein originelles Idle-Dice-Spiel für dein Smartphone." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon-180.png" />
+  <title>ROLLVERSE · Idle Dice</title>
+  <style>
+    :root { --bg:#090e21; --surface:#121b33; --surface2:#192540; --stroke:rgba(194,211,255,.13); --muted:#8c9abb; --white:#f5f7ff; --mint:#63f5ca; --yellow:#ffcc78; --purple:#a698ff; --pink:#fe90bf; --shadow:0 22px 70px rgba(0,0,0,.27); }
+    * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+    html,body { margin:0; min-height:100%; background:var(--bg); color:var(--white); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif; overscroll-behavior-y:none; }
+    body:before { content:""; position:fixed; inset:0; background:radial-gradient(ellipse 430px 350px at 85% -4%,rgba(92,62,205,.19),transparent),radial-gradient(ellipse 460px 350px at 0 60%,rgba(33,121,183,.1),transparent); z-index:-1; pointer-events:none; }
+    button { color:inherit; font:inherit; cursor:pointer; border:0; }
+    button:disabled { cursor:not-allowed; opacity:.43; }
+    .app { max-width:640px; min-height:100dvh; margin:auto; padding:0 18px calc(108px + env(safe-area-inset-bottom)); }
+    header { display:flex; justify-content:space-between; gap:8px; align-items:center; padding:calc(env(safe-area-inset-top) + 23px) 0 19px; }
+    .brand { display:flex; gap:10px; align-items:center; min-width:0; }
+    .logo { width:41px; height:41px; display:grid; place-items:center; border:1px solid rgba(150,130,255,.45); border-radius:14px; background:linear-gradient(145deg,#4c3cc6,#283475); font-size:23px; transform:rotate(-8deg); box-shadow:0 6px 19px #3420a459; }
+    .brand strong { display:block; font-size:15px; letter-spacing:2.5px; line-height:1.4; }
+    .brand small { display:block; color:var(--muted); font-size:10px; letter-spacing:2px; font-weight:700; }
+    .level { padding:8px 11px; border:1px solid var(--stroke); background:rgba(255,255,255,.04); border-radius:12px; color:#c3cafa; font-weight:800; font-size:11px; white-space:nowrap; }
+    .stats { background:linear-gradient(135deg,rgba(32,47,85,.97),rgba(20,29,60,.93)); border:1px solid rgba(176,192,255,.14); border-radius:23px; padding:20px; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+    .stats:after { content:""; position:absolute; width:185px;height:185px; border-radius:50%; right:-95px; top:-95px; background:radial-gradient(circle,rgba(157,124,255,.2),transparent 70%); pointer-events:none; }
+    .eyebrow { color:#9facd1; text-transform:uppercase; letter-spacing:2.25px; font-size:10px; font-weight:900; }
+    .big-money { margin-top:5px; font-size:clamp(30px,8vw,45px); font-weight:850; letter-spacing:-1.6px; font-variant-numeric:tabular-nums; line-height:1.2; overflow-wrap:anywhere; }
+    .big-money span { color:var(--mint); }
+    .statrow { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; border-top:1px solid rgba(211,218,255,.1); padding-top:15px; margin-top:17px; }
+    .statrow>div { min-width:0; }
+    .statrow small { color:var(--muted); display:block; margin-bottom:5px; font-size:10px; }
+    .statrow b { display:block; font-size:13px; font-variant-numeric:tabular-nums; }
+    .page { margin-top:22px; }
+    .page[hidden] { display:none!important; }
+    .section-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:13px; gap:8px; }
+    h2,h3,p { margin:0; }
+    h2 { font-size:21px; letter-spacing:-.5px; }
+    h3 { font-size:14px; }
+    .meta { color:var(--muted); font-size:12px; }
+    .pill { border-radius:100px; padding:7px 10px; border:1px solid rgba(99,245,202,.21); background:rgba(99,245,202,.08); color:var(--mint); font-size:10px; font-weight:800; white-space:nowrap; }
+    .arena { border-radius:26px; border:1px solid rgba(161,160,255,.19); background:radial-gradient(ellipse at 50% 36%,rgba(96,71,204,.26),transparent 68%),radial-gradient(ellipse at 100% 100%,rgba(58,168,178,.13),transparent 60%),linear-gradient(155deg,#141b38,#10172b); padding:18px; min-height:294px; overflow:hidden; position:relative; box-shadow:inset 0 2px rgba(255,255,255,.025); }
+    .arena-head { display:flex; justify-content:space-between; align-items:center; gap:8px; position:relative; z-index:1; }
+    .arena-head strong { font-size:12px; }
+    .arena-head span { color:var(--muted); font-size:10px; font-weight:650; }
+    .dice-field { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:14px 16px; padding:23px 4px 18px; min-height:225px; position:relative; z-index:1; }
+    .dice-field:before { content:""; position:absolute; inset:13px -5px 5px; background-image:radial-gradient(rgba(191,187,255,.12) 1px,transparent 1px); background-size:19px 19px; mask-image:radial-gradient(ellipse at center,black 25%,transparent 76%); pointer-events:none; }
+    .die { position:relative; border-radius:17px; width:70px; height:70px; padding:11px; box-shadow:inset 0 2px 4px #ffffff88,inset 0 -5px 5px #00000040,0 12px 2px #0b0e2799,0 18px 20px #0008; transform:rotate(var(--rot)); transition:transform .18s,filter .18s; flex-shrink:0; }
+    .die:nth-child(2n) { --rot:9deg; }
+    .die:nth-child(3n) { --rot:-11deg; }
+    .die:nth-child(5n) { --rot:13deg; }
+    .die[data-color="0"] { background:linear-gradient(145deg,#f2f7ff,#9fbaf8); --pip:#384974; }
+    .die[data-color="1"] { background:linear-gradient(145deg,#fff5be,#fca77a); --pip:#7d4b55; }
+    .die[data-color="2"] { background:linear-gradient(145deg,#befce4,#5dcbb5); --pip:#256a68; }
+    .die[data-color="3"] { background:linear-gradient(145deg,#e5ceff,#9779fd); --pip:#463b8f; }
+    .die[data-color="4"] { background:linear-gradient(145deg,#ffcfdd,#ff79a5); --pip:#8a3d62; }
+    .die[data-color="5"] { background:linear-gradient(145deg,#d9f6ff,#7bbef7); --pip:#366088; }
+    .die.rolling { animation:tumble .42s cubic-bezier(.15,.6,.18,1); }
+    @keyframes tumble { 0% { transform:translateY(0) rotate(0deg) scale(1) } 40% { transform:translateY(-27px) rotate(115deg) scale(.9) } 80% { transform:translateY(2px) rotate(300deg) scale(1.06) } 100% { transform:rotate(var(--rot)) scale(1) } }
+    .pips { display:grid; width:100%; height:100%; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(3,1fr); }
+    .pip { width:11px; height:11px; border-radius:50%; background:var(--pip); box-shadow:inset 1px 2px 1px #0005; align-self:center; justify-self:center; }
+    .coin-float { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); color:#ffde93; font-weight:900; font-size:24px; text-shadow:0 3px 17px #000; z-index:5; pointer-events:none; animation:floatup 1s ease-out forwards; white-space:nowrap; }
+    .coin-float.crit { color:#fda1da; font-size:28px; }
+    @keyframes floatup { to { opacity:0; transform:translate(-50%,-145px) scale(1.23); } }
+    .arena-caption { position:absolute; bottom:13px; left:0; right:0; text-align:center; color:#a3add1; font-size:10px; pointer-events:none; }
+    .roll-btn { width:100%; margin-top:13px; min-height:68px; display:flex; justify-content:center; align-items:center; gap:10px; border-radius:18px; font-weight:900; letter-spacing:1.4px; font-size:17px; background:linear-gradient(105deg,#8a79ff,#c286fa); color:#120f31; box-shadow:0 8px 24px #8672ff39,inset 0 2px 0 #ffffff65; transition:transform .12s,filter .12s; }
+    .roll-btn:active { transform:scale(.976); filter:brightness(1.13); }
+    .roll-btn .emoji { font-size:24px; }
+    .minirow { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:11px; }
+    .small-panel { background:rgba(24,36,64,.83); border:1px solid var(--stroke); border-radius:16px; padding:13px; min-height:77px; }
+    .small-panel small { display:block; color:var(--muted); font-size:10px; margin-bottom:6px; }
+    .small-panel strong { display:block; font-size:14px; }
+    .skill { border-radius:16px; border:1px solid #ba9dff4a; background:#2b2250; padding:12px; display:flex; align-items:center; justify-content:space-between; gap:8px; width:100%; margin-top:14px; }
+    .skill .left { display:flex; align-items:center; gap:11px; text-align:left; }
+    .skill i { width:36px;height:36px; border-radius:11px; display:grid; place-items:center; font-style:normal; font-size:21px; background:#8b69ff4d; }
+    .skill small { display:block; margin-top:3px; font-size:10px; color:#aaa4dc; }
+    .skill>span { font-size:11px; border-radius:9px; padding:8px 9px; background:#a58afd; font-weight:850; color:#181131; white-space:nowrap; }
+    .skill:disabled>span { background:#817899; color:#efeaff; }
+    .challenge { margin-top:18px; background:rgba(26,39,63,.87); border:1px solid var(--stroke); border-radius:18px; padding:16px; }
+    .challenge-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:11px; gap:9px; }
+    .challenge b { font-size:13px; }
+    .challenge small { color:var(--yellow); font-size:11px; }
+    .progress { height:7px; background:#2a3352; overflow:hidden; border-radius:50px; margin:11px 0 7px; }
+    .progress>div { background:linear-gradient(90deg,#8f83ff,#7bf4d9); height:100%; width:0%; transition:width .22s; border-radius:50px; }
+    .flexline { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+    .claim { padding:9px 13px; border-radius:11px; background:var(--mint); color:#063a32; font-weight:900; font-size:11px; }
+    .cards { display:grid; gap:10px; }
+    .up-card { display:grid; grid-template-columns:46px minmax(0,1fr) auto; align-items:center; gap:11px; background:linear-gradient(120deg,rgba(26,36,63,.94),rgba(18,27,48,.98)); border:1px solid var(--stroke); border-radius:17px; padding:13px 11px; }
+    .item-icon { width:44px;height:44px;border-radius:13px;background:#30385f;display:grid;place-items:center;font-size:22px; }
+    .item-name { font-weight:800; font-size:13px; }
+    .item-desc { font-size:10px; color:var(--muted); margin-top:3px; line-height:1.4; }
+    .level-tag { font-size:10px; font-weight:750; color:#b1a9ff; margin-top:6px; }
+    .buy { background:#2b3963; border:1px solid #52649888; border-radius:11px; min-width:85px; min-height:43px; padding:5px 8px; font-size:11px; font-weight:850; color:#e4eaff; line-height:1.45; }
+    .buy:active:not(:disabled) { background:#5565aa; }
+    .buy span { display:block; font-size:9px; color:var(--mint); }
+    .bottom { display:flex; position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:640px; z-index:30; background:#10182def; backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border-top:1px solid rgba(169,187,240,.13); padding:9px 10px calc(9px + env(safe-area-inset-bottom)); justify-content:space-around; gap:5px; }
+    .tab { flex:1; min-width:0; background:transparent; display:grid; place-items:center; gap:3px; color:#8999b9; padding:8px 0; border-radius:12px; font-size:10px; font-weight:800; }
+    .tab .tab-icon { font-size:20px; }
+    .tab.active { color:#e9e4ff; background:#2e2a55; }
+    .card { background:linear-gradient(135deg,#172342,#151d35); border:1px solid var(--stroke); border-radius:20px; padding:19px; }
+    .prestige-head { background:radial-gradient(circle at 85% 10%,#8863b248,transparent 48%),linear-gradient(135deg,#271e49,#151d35); }
+    .star-number { color:#ffc966; font-weight:900; font-size:32px; margin:14px 0 4px; }
+    .muted { color:var(--muted); line-height:1.5; font-size:12px; }
+    .prestige-button { background:linear-gradient(110deg,#f4ab72,#ffe1a2); width:100%; min-height:51px; border-radius:12px; color:#4c281b; font-weight:900; margin-top:17px; font-size:13px; }
+    .prestige-button:disabled { background:#525069; color:#c0bdd2; }
+    .sub-heading { display:flex; align-items:center; justify-content:space-between; margin:23px 0 13px; }
+    .achievement { display:flex; align-items:center; gap:13px; border-radius:15px; border:1px solid var(--stroke); padding:13px; background:#151f35; margin-bottom:9px; }
+    .achievement .badge-icon { width:42px; height:42px; display:grid; place-items:center; background:#273451; border-radius:12px; font-size:22px; filter:grayscale(1); opacity:.45; }
+    .achievement.unlocked .badge-icon { filter:none;opacity:1;background:#3b365e; }
+    .achievement b { font-size:12px; }
+    .achievement p { font-size:10px; color:var(--muted); margin-top:4px; }
+    .achievement .right { margin-left:auto; color:var(--mint);font-size:11px; font-weight:850; }
+    .settings-row { display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid var(--stroke); gap:10px; }
+    .settings-row b { font-size:12px; }
+    .switch { padding:7px 12px; border-radius:9px; background:#344266; font-weight:850; font-size:11px; }
+    .footer-note { text-align:center; color:#697999; font-size:10px; margin:26px 0 0; }
+    .toast { position:fixed; z-index:50; bottom:calc(100px + env(safe-area-inset-bottom)); left:50%; transform:translate(-50%,12px); width:min(400px,calc(100% - 32px)); color:#f8fbff; font-size:12px; font-weight:800; background:#33415f; padding:14px 17px; border:1px solid #7d8db388; box-shadow:0 15px 45px #0008; border-radius:12px; text-align:center; opacity:0; pointer-events:none; transition:all .2s; }
+    .toast.show { transform:translate(-50%,0); opacity:1; }
+    @media(max-width:370px){ .app {padding-left:13px;padding-right:13px;} .dice-field {gap:12px;} .die {width:62px;height:62px;padding:8px;} .up-card { gap:8px; } .buy { min-width:75px; }}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after {animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand"><div class="logo">🎲</div><div><strong>ROLLVERSE</strong><small>INCREMENTAL UNIVERSE</small></div></div>
+      <div class="level" id="levelBadge">✦ UNIVERSUM 01</div>
+    </header>
+    <div class="stats">
+      <div class="eyebrow">Dein Guthaben</div>
+      <div class="big-money" id="moneyDisplay">0 <span>◈</span></div>
+      <div class="statrow">
+        <div><small>Pro Sekunde</small><b id="incomeDisplay">0 ◈</b></div>
+        <div><small>Würfel</small><b id="diceDisplay">1 🎲</b></div>
+        <div><small>Sternenstaub</small><b id="dustDisplay">0 ✦</b></div>
+      </div>
+    </div>
+    <main>
+      <section class="page" id="page-play">
+        <div class="section-head"><h2>Die Würfelarena</h2><div class="pill" id="comboTag">✦ KOMBO x1</div></div>
+        <div class="arena" id="arena" role="button" tabindex="0" aria-label="Würfel werfen">
+          <div class="arena-head"><strong>◉ WÜRFEL-RESONANZ</strong><span id="arenaRuns">0 Würfe</span></div>
+          <div class="dice-field" id="diceField"></div>
+          <div class="arena-caption">Tippe auf die Würfel oder den Button</div>
+        </div>
+        <button class="roll-btn" id="rollBtn"><span class="emoji">🎲</span> WÜRFELN <span class="emoji">✦</span></button>
+        <div class="minirow">
+          <div class="small-panel"><small>Letzter Wurf</small><strong id="lastDisplay">—</strong></div>
+          <div class="small-panel"><small>Aktuell gesammelt</small><strong id="earnedDisplay">0 ◈</strong></div>
+        </div>
+        <button class="skill" id="skillBtn"><div class="left"><i>⚡</i><div><strong>OVERDRIVE</strong><small>12 Sekunden x2 Einkommen</small></div></div><span id="skillState">AKTIVIEREN</span></button>
+        <div class="challenge" id="questBox"></div>
+      </section>
+      <section class="page" id="page-upgrades" hidden>
+        <div class="section-head"><h2>Upgrades</h2><div class="pill">◈ MEHR POWER</div></div>
+        <p class="muted" style="margin-bottom:18px">Baue deine Würfelmaschine aus. Normale Upgrades werden beim Prestige zurückgesetzt.</p>
+        <div class="cards" id="upgradeList"></div>
+      </section>
+      <section class="page" id="page-prestige" hidden>
+        <div class="section-head"><h2>Prestige-Zentrale</h2><div class="pill">✦ FÜR IMMER</div></div>
+        <div class="card prestige-head">
+          <div class="eyebrow">Dein nächster Neustart bringt</div>
+          <div class="star-number" id="prestigeGain">+0 ✦</div>
+          <p class="muted" id="prestigeInfo">Verdiene 10.000 ◈ in einem Durchlauf, um Prestige freizuschalten.</p>
+          <div class="progress"><div id="prestigeProgress"></div></div>
+          <div class="flexline"><span class="meta" id="prestigeProgressText">0 / 10.000</span><span class="meta" id="prestigeMultiplier">Dauerhafter Bonus: x1</span></div>
+          <button id="prestigeBtn" class="prestige-button" disabled>✦ UNIVERSUM NEU STARTEN</button>
+        </div>
+        <div class="sub-heading"><h3>✨ Permanente Talente</h3><span class="meta" id="starsAvailable">0 ✦ verfügbar</span></div>
+        <div class="cards" id="metaList"></div>
+      </section>
+      <section class="page" id="page-collection" hidden>
+        <div class="section-head"><h2>Sammlung & Statistik</h2><div class="pill">🏆 ERFOLGE</div></div>
+        <div class="card" id="allStats"></div>
+        <div class="sub-heading"><h3>Meilensteine</h3><span class="meta" id="achievementSummary"></span></div>
+        <div id="achievementList"></div>
+        <div class="sub-heading"><h3>Einstellungen</h3></div>
+        <div class="card">
+          <div class="settings-row"><b>Sounds</b><button class="switch" id="soundToggle">AN</button></div>
+          <div class="settings-row" style="border-bottom:0"><b>Spielstand zurücksetzen</b><button class="switch" id="resetBtn">ZURÜCKSETZEN</button></div>
+          <p class="muted" style="margin-top:6px">Dein Spielstand wird lokal auf diesem Gerät in diesem Browser gespeichert. Es gibt noch keine Cloud-Synchronisierung.</p>
+        </div>
+        <p class="footer-note">ROLLVERSE · Prototyp 0.1 · Mit Liebe zu großen Zahlen ✦</p>
+      </section>
+    </main>
+  </div>
+  <nav class="bottom" aria-label="Navigation">
+    <button class="tab active" data-tab="play"><span class="tab-icon">🎲</span>SPIELEN</button>
+    <button class="tab" data-tab="upgrades"><span class="tab-icon">⚡</span>UPGRADES</button>
+    <button class="tab" data-tab="prestige"><span class="tab-icon">✦</span>PRESTIGE</button>
+    <button class="tab" data-tab="collection"><span class="tab-icon">🏆</span>SAMMLUNG</button>
+  </nav>
+  <div class="toast" role="status" id="toast"></div>
+  <script>
+  'use strict';
+  const SAVE_KEY = 'rollverse-v1';
+  const upgradeDefs = {
+    dice: { icon:'🎲', name:'Mehr Würfel', desc:'+1 Würfel pro Wurf', base:14, scale:1.82, cap:11 },
+    power: { icon:'💎', name:'Würfelwert', desc:'+30 % Grundwert je Level', base:25, scale:1.52, cap:100 },
+    auto: { icon:'🤖', name:'Wurfroboter', desc:'Würfelt automatisch und immer schneller', base:72, scale:1.90, cap:35 },
+    tap: { icon:'👆', name:'Klick-Power', desc:'+35 % Ertrag bei manuellen Würfen', base:44, scale:1.58, cap:100 },
+    crit: { icon:'💥', name:'Kritische Würfe', desc:'+4 % Chance auf dreifachen Gewinn', base:95, scale:1.9, cap:19 },
+    combo: { icon:'🔗', name:'Resonanz', desc:'+40 % auf Würfelkombinationen', base:180, scale:1.92, cap:50 },
+    lucky: { icon:'🌟', name:'Sternenwürfel', desc:'+2 % Chance auf fünffachen Gewinn', base:330, scale:1.95, cap:32 }
+  };
+  const metaDefs = {
+    power: { icon:'🌌', name:'Kosmischer Schub', desc:'+25 % auf alle Einnahmen (permanent)', base:1, scale:1.55, cap:30 },
+    headstart: { icon:'🚀', name:'Startkapital', desc:'Jeder Neustart startet mit extra Guthaben', base:2, scale:2, cap:15 },
+    speed: { icon:'⏱️', name:'Quantentakt', desc:'Automatische Würfe +12 % schneller', base:2, scale:1.7, cap:20 },
+    fortune: { icon:'🍀', name:'Ewiges Glück', desc:'+1,5 % Krit-Chance dauerhaft', base:3, scale:1.85, cap:15 }
+  };
+  const quests = [
+    { title:'Der erste Schwung', desc:'Würfle insgesamt 20-mal', type:'rolls', target:20, reward:180 },
+    { title:'Münzsammler', desc:'Verdiene 2.500 ◈ in diesem Universum', type:'earned', target:2500, reward:850 },
+    { title:'Würfelparade', desc:'Sammle mindestens 6 Würfel', type:'dice', target:6, reward:3000 },
+    { title:'Eine neue Galaxie', desc:'Verdiene 30.000 ◈ in einem Durchlauf', type:'earned', target:30000, reward:12000 },
+    { title:'Neuanfang', desc:'Führe dein erstes Prestige durch', type:'prestiges', target:1, reward:25000 },
+    { title:'Millionär', desc:'Verdiene 1 Million ◈ in einem Durchlauf', type:'earned', target:1000000, reward:250000 }
+  ];
+  const achievements = [
+    ['🎲','Los geht’s','Würfle 1-mal', s=>s.totalRolls>=1],
+    ['⚙️','Maschinenmeister','Kaufe einen Wurfroboter', s=>s.allAutoBought>=1],
+    ['💫','Würfelsturm','Erreiche 8 Würfel', s=>s.mostDice>=8],
+    ['💰','Erste Million','Verdiene insgesamt 1 Mio. ◈', s=>s.totalEarned>=1e6],
+    ['🌟','Neues Universum','Erreiche Prestige 1', s=>s.prestiges>=1],
+    ['✨','Sternenjäger','Sammle insgesamt 10 Sternenstaub', s=>s.totalDust>=10],
+    ['🏆','Vielspieler','Würfle insgesamt 1.000-mal', s=>s.totalRolls>=1000],
+    ['🚀','Grenzenlos','Erreiche Prestige 10', s=>s.prestiges>=10]
+  ];
+  const initState = () => ({ money:0,runEarned:0,totalEarned:0,totalRolls:0,manualRolls:0,prestiges:0,dust:0,totalDust:0,bestRun:0,mostDice:1,allAutoBought:0,up:{dice:0,power:0,auto:0,tap:0,crit:0,combo:0,lucky:0},meta:{power:0,headstart:0,speed:0,fortune:0},quest:0,overdriveUntil:0,overdriveReady:0,lastRoll:0,lastCombo:1,lastSeen:Date.now(),sound:true });
+  let state;
+  try { const raw=localStorage.getItem(SAVE_KEY); state=raw?JSON.parse(raw):initState(); } catch(e){ state=initState(); }
+  if(!state || typeof state!=='object' || !state.up || !state.meta) state=initState();
+  state={...initState(),...state,up:{...initState().up,...state.up},meta:{...initState().meta,...state.meta}};
+  // Sanitize saved numeric fields to avoid rendering invalid state.
+  for(const field of ['money','runEarned','totalEarned','totalRolls','manualRolls','prestiges','dust','totalDust','bestRun','mostDice','allAutoBought','quest','overdriveUntil','overdriveReady','lastRoll','lastCombo','lastSeen']){
+    if(!Number.isFinite(state[field]) || state[field]<0) state[field]=initState()[field];
+  }
+  for(const group of ['up','meta']) for(const [key,val] of Object.entries(state[group])) if(!Number.isFinite(val) || val<0) state[group][key]=0;
+  let activePage='play',lastTick=Date.now(),lastSave=0,lastRender=0,autoAccumulator=0,lastToast=0,audioContext=null;
+  const $=id=>document.getElementById(id);
+  const fmt=n=>{
+    n=Math.max(0,Number(n)||0);
+    if(n<1000) return Math.floor(n).toLocaleString('de-DE');
+    const prefixes=['','K','Mio','Mrd','Bio','Brd','Trio','Q','Qi','Sx','Sp'];
+    const p=Math.floor(Math.log10(n)/3),v=n/Math.pow(1000,p);
+    return (v<10?v.toLocaleString('de-DE',{maximumFractionDigits:2}):v<100?v.toLocaleString('de-DE',{maximumFractionDigits:1}):Math.floor(v).toLocaleString('de-DE'))+' '+(prefixes[p]||`e${p*3}`);
+  };
+  function cost(def,lvl){return Math.ceil(def.base*Math.pow(def.scale,lvl));}
+  function diceCount(){return 1+state.up.dice;}
+  function multiplier(){return (1+state.up.power*.30)*(1+state.meta.power*.25);}
+  function critChance(){return Math.min(.94,.06+state.up.crit*.04+state.meta.fortune*.015);}
+  function luckyChance(){return Math.min(.75,.03+state.up.lucky*.02);}
+  function autoInterval(){if(!state.up.auto) return Infinity;return Math.max(.20,2.9/Math.pow(1.19,state.up.auto-1)/(1+state.meta.speed*.12));}
+  function expectedRoll(isManual=false){
+    const luck=1+critChance()*2+luckyChance()*4;
+    const comboChance=1+.12*(1+state.up.combo*.4)*Math.max(0,diceCount()-1);
+    return 3.5*diceCount()*multiplier()*luck*comboChance*(isManual?1+state.up.tap*.35:1);
+  }
+  function perSecond(){return Number.isFinite(autoInterval())?expectedRoll()/autoInterval():0;}
+  function prestigeGain(){return Math.floor(Math.sqrt(state.runEarned/10000));}
+  function addIncome(amount){
+    if(!Number.isFinite(amount)||amount<=0) return;
+    state.money+=amount;state.runEarned+=amount;state.totalEarned+=amount;state.bestRun=Math.max(state.bestRun,state.runEarned);
+  }
+  function save(){try{state.lastSeen=Date.now();localStorage.setItem(SAVE_KEY,JSON.stringify(state));lastSave=Date.now();}catch(e){/* storage disabled */}}
+  function toast(message){const el=$('toast');el.textContent=message;el.classList.add('show');lastToast=Date.now();}
+  function sound(){
+    if(!state.sound) return;
+    try {
+      const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+      if(!audioContext) audioContext=new AC();if(audioContext.state==='suspended')audioContext.resume();
+      const osc=audioContext.createOscillator(),vol=audioContext.createGain(),t=audioContext.currentTime;
+      osc.type='sine';osc.frequency.setValueAtTime(630,t);osc.frequency.exponentialRampToValueAtTime(350,t+.09);
+      vol.gain.setValueAtTime(.045,t);vol.gain.exponentialRampToValueAtTime(.0001,t+.1);osc.connect(vol);vol.connect(audioContext.destination);osc.start(t);osc.stop(t+.1);
+    }catch(e){}
+  }
+  const facePositions={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
+  function dieHtml(face,index){return `<div class="die" data-color="${index%6}" style="--rot:${index%2?-7:6}deg" aria-label="Würfel ${index+1}: ${face}"><div class="pips">${Array.from({length:9},(_,i)=>facePositions[face].includes(i)?'<span class="pip"></span>':'<span></span>').join('')}</div></div>`;}
+  let lastFaces=[1];
+  function drawDice(animate=false){
+    const n=diceCount();if(lastFaces.length!==n) lastFaces=Array.from({length:n},()=>1+Math.floor(Math.random()*6));
+    $('diceField').innerHTML=lastFaces.map((v,i)=>dieHtml(v,i)).join('');
+    if(animate) $('diceField').querySelectorAll('.die').forEach((el,i)=>{el.style.animationDelay=(i%4)*.035+'s';el.classList.add('rolling');});
+  }
+  function comboFactor(faces){
+    const counts={};faces.forEach(v=>counts[v]=(counts[v]||0)+1);
+    let maxCount=Math.max(...Object.values(counts));
+    if(maxCount<2)return 1;
+    return (maxCount===2?1.6:maxCount===3?3:maxCount===4?6:10*Math.pow(1.6,maxCount-5))*(1+state.up.combo*.4);
+  }
+  function floatCoin(amount,crit=false){
+    if(activePage!=='play') return;
+    const arena=$('arena'),el=document.createElement('div');el.className='coin-float'+(crit?' crit':'');el.textContent='+'+fmt(amount)+' ◈';
+    arena.appendChild(el);setTimeout(()=>el.remove(),1000);
+  }
+  function roll(manual){
+    const faces=Array.from({length:diceCount()},()=>1+Math.floor(Math.random()*6));lastFaces=faces;
+    let combo=comboFactor(faces);
+    const crit=Math.random()<critChance(),lucky=Math.random()<luckyChance();
+    let reward=faces.reduce((a,b)=>a+b,0)*multiplier()*combo*(manual?1+state.up.tap*.35:1)*(crit?3:1)*(lucky?5:1);
+    if(Date.now()<state.overdriveUntil)reward*=2;
+    addIncome(reward);state.totalRolls++;if(manual)state.manualRolls++;
+    state.lastRoll=reward;state.lastCombo=combo;
+    state.mostDice=Math.max(state.mostDice,diceCount());
+    if(manual){sound();floatCoin(reward,crit||lucky||combo>=3);}
+    if(manual||activePage==='play' && state.totalRolls%3===0)drawDice(manual);
+  }
+  function upgrade(key){
+    const def=upgradeDefs[key],lv=state.up[key];if(!def||lv>=def.cap)return;
+    const amount=cost(def,lv);if(state.money+1e-8<amount)return;
+    state.money-=amount;state.up[key]++;
+    if(key==='auto')state.allAutoBought++;
+    state.mostDice=Math.max(state.mostDice,diceCount());
+    if(key==='dice')drawDice();
+    sound();save();render(true);
+  }
+  function metaUpgrade(key){
+    const def=metaDefs[key],lv=state.meta[key];if(!def||lv>=def.cap)return;
+    const amount=cost(def,lv);if(state.dust<amount)return;
+    state.dust-=amount;state.meta[key]++;
+    sound();save();render(true);
+  }
+  function prestige(){
+    const earned=prestigeGain();if(earned<1)return;
+    if(!confirm(`Du erhältst ${fmt(earned)} ✦ Sternenstaub. Dein Geld, deine Würfel und normalen Upgrades werden zurückgesetzt. Permanente Talente bleiben. Prestige durchführen?`))return;
+    state.prestiges++;state.dust+=earned;state.totalDust+=earned;
+    const cash=state.meta.headstart?Math.floor(100*Math.pow(5,state.meta.headstart-1)):0;
+    state.up={...initState().up};state.money=cash;state.runEarned=0;state.overdriveUntil=0;state.overdriveReady=0;
+    lastFaces=[1];autoAccumulator=0;drawDice();save();toast(`✦ Prestige ${state.prestiges}! +${fmt(earned)} Sternenstaub erhalten`);
+    changePage('prestige');render(true);
+  }
+  function questProgress(q){if(q.type==='rolls')return state.totalRolls;if(q.type==='earned')return state.runEarned;if(q.type==='dice')return diceCount();if(q.type==='prestiges')return state.prestiges;return 0;}
+  function claimQuest(){const q=quests[state.quest];if(!q||questProgress(q)<q.target)return;addIncome(q.reward);state.quest++;sound();save();toast('Mission erfüllt! +'+fmt(q.reward)+' ◈');render(true);}
+  function activateOverdrive(){const now=Date.now();if(now<state.overdriveReady)return;state.overdriveUntil=now+12000;state.overdriveReady=now+85000;sound();toast('⚡ OVERDRIVE AKTIV – 12 Sekunden doppelter Ertrag!');render(true);}
+  function renderQuest(){
+    const q=quests[state.quest],el=$('questBox');
+    if(!q){if(el.dataset.stamp!=='done'){el.innerHTML='<div class="challenge-top"><b>🏆 Alle Missionen erfüllt!</b><small>LEGENDÄR</small></div><p class="muted">Du hast bereits alle Missionen dieses Prototyps geschafft.</p>';el.dataset.stamp='done';}return;}
+    const current=questProgress(q),done=current>=q.target,pct=Math.min(100,100*current/q.target),stamp=state.quest+':'+done;
+    if(el.dataset.stamp!==stamp){
+      el.innerHTML=`<div class="challenge-top"><b>🎯 ${q.title}</b><small>+${fmt(q.reward)} ◈</small></div><p class="muted">${q.desc}</p><div class="progress"><div style="width:${pct}%"></div></div><div class="flexline"><span class="meta" data-questprogress>${fmt(Math.min(current,q.target))} / ${fmt(q.target)}</span>${done?'<button class="claim" id="claimBtn">ABHOLEN ✓</button>':'<span class="meta">In Arbeit...</span>'}</div>`;
+      el.dataset.stamp=stamp;
+      if(done)$('claimBtn').addEventListener('click',claimQuest);
+    } else {
+      el.querySelector('.progress>div').style.width=pct+'%';
+      el.querySelector('[data-questprogress]').textContent=fmt(Math.min(current,q.target))+' / '+fmt(q.target);
+    }
+  }
+  function renderUpgrades(){
+    $('upgradeList').innerHTML=Object.entries(upgradeDefs).map(([key,d])=>{
+      const lv=state.up[key],max=lv>=d.cap,c=cost(d,lv),enough=state.money>=c;
+      return `<div class="up-card"><div class="item-icon">${d.icon}</div><div><div class="item-name">${d.name}</div><div class="item-desc">${d.desc}</div><div class="level-tag">LEVEL ${lv}${max?' · MAX':''}</div></div><button class="buy" data-up="${key}" ${max||!enough?'disabled':''}>${max?'MAX':`KAUFEN <span>${fmt(c)} ◈</span>`}</button></div>`;
+    }).join('');
+  }
+  function renderMeta(){
+    $('metaList').innerHTML=Object.entries(metaDefs).map(([key,d])=>{
+      const lv=state.meta[key],max=lv>=d.cap,c=cost(d,lv),enough=state.dust>=c;
+      return `<div class="up-card"><div class="item-icon">${d.icon}</div><div><div class="item-name">${d.name}</div><div class="item-desc">${d.desc}</div><div class="level-tag">LEVEL ${lv}${max?' · MAX':''}</div></div><button class="buy" data-meta="${key}" ${max||!enough?'disabled':''}>${max?'MAX':`KAUFEN <span>${fmt(c)} ✦</span>`}</button></div>`;
+    }).join('');
+  }
+  function renderAchievements(){
+    const earned=achievements.filter(a=>a[3](state)).length;
+    $('achievementSummary').textContent=`${earned} / ${achievements.length} freigeschaltet`;
+    $('achievementList').innerHTML=achievements.map(([ico,name,desc,check])=>{
+      const got=check(state);
+      return `<div class="achievement${got?' unlocked':''}"><div class="badge-icon">${ico}</div><div><b>${name}</b><p>${desc}</p></div><span class="right">${got?'✓':'🔒'}</span></div>`;
+    }).join('');
+  }
+  function render(full=false){
+    const now=Date.now();if(!full && now-lastRender<170)return;lastRender=now;
+    $('moneyDisplay').innerHTML=fmt(state.money)+' <span>◈</span>';
+    $('incomeDisplay').textContent=fmt(perSecond())+' ◈';
+    $('diceDisplay').textContent=diceCount()+' 🎲';
+    $('dustDisplay').textContent=fmt(state.dust)+' ✦';
+    $('levelBadge').textContent='✦ UNIVERSUM '+String(state.prestiges+1).padStart(2,'0');
+    if(activePage==='play'){
+      $('comboTag').textContent='✦ KOMBO x'+state.lastCombo.toLocaleString('de-DE',{maximumFractionDigits:1});
+      $('arenaRuns').textContent=fmt(state.totalRolls)+' Würfe';
+      $('lastDisplay').textContent=state.lastRoll?fmt(state.lastRoll)+' ◈':'—';
+      $('earnedDisplay').textContent=fmt(state.runEarned)+' ◈';
+      const skillText=now<state.overdriveUntil?`AKTIV ${Math.ceil((state.overdriveUntil-now)/1000)}s`:now<state.overdriveReady?`BEREIT IN ${Math.ceil((state.overdriveReady-now)/1000)}s`:'AKTIVIEREN';
+      $('skillState').textContent=skillText;$('skillBtn').disabled=now<state.overdriveReady;
+      renderQuest();
+    } else if(activePage==='upgrades'){
+      if(full || !$('upgradeList').children.length)renderUpgrades();
+      else document.querySelectorAll('[data-up]').forEach(btn=>{const key=btn.dataset.up;btn.disabled=state.up[key]>=upgradeDefs[key].cap || state.money<cost(upgradeDefs[key],state.up[key]);});
+    }
+    else if(activePage==='prestige'){
+      const gained=prestigeGain(),target=10000*Math.pow(gained+1,2),previous=10000*gained*gained;
+      $('prestigeGain').textContent='+'+fmt(gained)+' ✦';
+      $('prestigeInfo').textContent=gained?'Mit Prestige behältst du deine permanenten Talente und startest stärker.':'Verdiene mindestens 10.000 ◈ in einem Durchlauf, um das erste Prestige freizuschalten.';
+      $('prestigeProgress').style.width=Math.min(100,Math.max(0,100*(state.runEarned-previous)/(target-previous)))+'%';
+      $('prestigeProgressText').textContent=fmt(state.runEarned)+' / '+fmt(target)+' ◈';
+      $('prestigeMultiplier').textContent='Dauerhafter Bonus: x'+(1+state.meta.power*.25).toLocaleString('de-DE',{maximumFractionDigits:2});
+      $('prestigeBtn').disabled=gained<1;
+      $('starsAvailable').textContent=fmt(state.dust)+' ✦ verfügbar';
+      if(full || !$('metaList').children.length)renderMeta();
+    } else {
+      $('allStats').innerHTML=`<div class="flexline"><span class="muted">Gesamt verdient</span><b>${fmt(state.totalEarned)} ◈</b></div><div class="settings-row"><span class="muted">Würfe insgesamt</span><b>${fmt(state.totalRolls)}</b></div><div class="settings-row"><span class="muted">Bester Durchlauf</span><b>${fmt(state.bestRun)} ◈</b></div><div class="settings-row"><span class="muted">Prestige-Stufe</span><b>${fmt(state.prestiges)}</b></div><div class="settings-row" style="border-bottom:0"><span class="muted">Gesammelter Sternenstaub</span><b>${fmt(state.totalDust)} ✦</b></div>`;
+      $('soundToggle').textContent=state.sound?'AN':'AUS';renderAchievements();
+    }
+  }
+  function changePage(tab){activePage=tab;document.querySelectorAll('.page').forEach(p=>p.hidden=p.id!=='page-'+tab);document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));window.scrollTo({top:0,behavior:'instant'});render(true);}
+  function calculateOffline(){
+    const now=Date.now(),elapsed=Math.min(14400,Math.max(0,(now-lastTick)/1000));
+    if(elapsed>5 && state.up.auto){const reward=perSecond()*elapsed*.8;addIncome(reward);toast('🌙 Offline-Bonus: +'+fmt(reward)+' ◈ ('+Math.floor(elapsed/60)+' min)');}
+    lastTick=now;autoAccumulator=0;save();render(true);
+  }
+  // Saved session offline earnings, capped at four hours. 80% of estimated live income.
+  if(state.up.auto && Date.now()-state.lastSeen>5000){
+    const seconds=Math.min(14400,(Date.now()-state.lastSeen)/1000);
+    const reward=perSecond()*seconds*.8;addIncome(reward);
+    setTimeout(()=>toast('🌙 Willkommen zurück! +'+fmt(reward)+' ◈ im Offline-Modus'),550);
+  }
+  document.querySelectorAll('[data-tab]').forEach(el=>el.addEventListener('click',()=>changePage(el.dataset.tab)));
+  $('rollBtn').addEventListener('click',()=>{roll(true);render(true);});
+  $('arena').addEventListener('click',()=>{roll(true);render(true);});
+  $('arena').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();roll(true);render(true);}});
+  $('upgradeList').addEventListener('click',e=>{const btn=e.target.closest('[data-up]');if(btn)upgrade(btn.dataset.up);});
+  $('metaList').addEventListener('click',e=>{const btn=e.target.closest('[data-meta]');if(btn)metaUpgrade(btn.dataset.meta);});
+  $('prestigeBtn').addEventListener('click',prestige);
+  $('skillBtn').addEventListener('click',activateOverdrive);
+  $('soundToggle').addEventListener('click',()=>{state.sound=!state.sound;save();render(true);});
+  $('resetBtn').addEventListener('click',()=>{if(!confirm('Wirklich deinen GESAMTEN Spielstand löschen? Das kann nicht rückgängig gemacht werden.'))return;state=initState();lastFaces=[1];autoAccumulator=0;save();drawDice();changePage('play');toast('Neuer Spielstand gestartet');});
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')calculateOffline();else save();});
+  setInterval(()=>{
+    const now=Date.now(),delta=Math.max(0,Math.min(1,(now-lastTick)/1000));lastTick=now;
+    if(state.up.auto){
+      autoAccumulator+=delta;
+      const interval=autoInterval();let count=Math.min(20,Math.floor(autoAccumulator/interval));
+      if(count){autoAccumulator-=count*interval;for(let i=0;i<count;i++)roll(false);}
+    } else autoAccumulator=0;
+    if(now-lastToast>2600)$('toast').classList.remove('show');
+    render();if(now-lastSave>2500)save();
+  },200);
+  drawDice();render(true);save();
+  if('serviceWorker'in navigator && location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(()=>{});
+  </script>
+</body>
+</html>
