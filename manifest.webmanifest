@@ -1,13 +1,13 @@
 {
-  "name": "ROLLVERSE – BLOCKWORLD",
+  "name": "ROLLVERSE – SKYFORGE",
   "short_name": "ROLLVERSE",
-  "description": "Eine Welt aus Würfeln. Anspruchsvolle Progression, Automatisierung und Prestige.",
+  "description": "Desktop Idle-Game mit Würfelmaschinen, Gacha-Begleitern, Expeditionen und skalierendem Rebirth.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#e9f5ff",
-  "theme_color": "#e9f5ff",
+  "orientation": "any",
+  "background_color": "#10101b",
+  "theme_color": "#10101b",
   "icons": [
     {
       "src": "icon-192.png",
