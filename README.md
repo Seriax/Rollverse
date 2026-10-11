@@ -1,8 +1,21 @@
-# ROLLVERSE 0.2 — The Long Game
+# ROLLVERSE 0.3 — BLOCKWORLD
 
-Mobile Idle-Dice-Spiel: https://seriax.github.io/Rollverse/?v=0.2.0
+Mobile Idle-Dice-Spiel: https://seriax.github.io/Rollverse/?v=0.3.0
 
-## Version 0.2
+## Version 0.3
+
+- Helle blockige Spielwelt mit Bäumen, Wolken, Häusern, kräftigen Konturen und Spielzeug-Buttons.
+- Premiumwährung Gems und ein auffälliger Shop mit drei Gem-Paketen und elf Produkten.
+- Dauerhafte Gamepasses: VIP (×2 alle Einnahmen), Power Hands (+75 % manuell), Lucky Charm (+3 % Krit-Chance).
+- Double-Coins-Booster, Time Warp, drei Begleiter und drei kosmetische Würfel-Skins.
+- Gems ohne Kauf: zehn alle 24 Stunden, zwanzig pro 500 manuellen Würfen und zehn pro neuem Erfolg.
+- Sämtliche Europreise sind Vorschauen. Gem-Pakete werden ausdrücklich als Demo aktiviert, ohne Geld abzubuchen. Es gibt keine Zahlungsintegration.
+- Lokales Admin-Lab: eigene PIN setzen, Gems/Münzen/Sternenstaub vergeben, alles freischalten, Welten/Upgrades maximieren und Shops kostenlos verwenden.
+- Admin öffnen: Sammlung → Admin-Menü oder fünfmal auf das Würfel-Logo tippen. Die PIN ist nur auf diesem Gerät gültig und wird separat vom Spielstand als gesalzener Hash gespeichert. Die statische App bietet keine sichere serverseitige Rechteverwaltung. Kostenlos-Modus erfordert eine entsperrte Admin-Sitzung und wird beim Sperren oder Neuladen deaktiviert.
+- Gems, Gamepasses, Begleiter und Skins bleiben nach Prestige erhalten. Bestehende Version-0.2-Spielstände werden übernommen.
+- Geprüft: Käufe, doppelte Käufe, fehlendes Guthaben, Haustiermultiplikatoren, Booster-Offline-Zeit, tägliche Belohnungen, Meilensteine, PIN-Anlage/Prüfung, Sperren, Admin-Aktionen und Prestige-Erhalt.
+
+## Basis aus Version 0.2
 
 - Perspektivisches Würfelbrett mit Holzrahmen, Kristallen und vier freischaltbaren Farbwelten.
 - Gestaffelte Würfelsprünge, Krit- und Komboeffekte, Partikel und Fokus-Boost nach 30 manuellen Würfen.

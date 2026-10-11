@@ -1,13 +1,13 @@
 {
-  "name": "ROLLVERSE – The Long Game",
+  "name": "ROLLVERSE – BLOCKWORLD",
   "short_name": "ROLLVERSE",
   "description": "Eine Welt aus Würfeln. Anspruchsvolle Progression, Automatisierung und Prestige.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#0c0b1e",
-  "theme_color": "#0c0b1e",
+  "background_color": "#e9f5ff",
+  "theme_color": "#e9f5ff",
   "icons": [
     {
       "src": "icon-192.png",

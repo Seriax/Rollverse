@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
-  <meta name="theme-color" content="#0c0b1e" />
+  <meta name="theme-color" content="#e9f5ff" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="ROLLVERSE" />
   <meta name="description" content="ROLLVERSE – ein originelles Idle-Dice-Spiel für dein Smartphone." />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="apple-touch-icon" href="icon-180.png" />
-  <title>ROLLVERSE · Idle Dice</title>
+  <title>ROLLVERSE · BLOCKWORLD</title>
   <style>
     :root { --bg:#090e21; --surface:#121b33; --surface2:#192540; --stroke:rgba(194,211,255,.13); --muted:#8c9abb; --white:#f5f7ff; --mint:#63f5ca; --yellow:#ffcc78; --purple:#a698ff; --pink:#fe90bf; --shadow:0 22px 70px rgba(0,0,0,.27); }
     * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -143,13 +143,18 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
 .settings-row button{min-height:36px}.file-input{display:none}.update-banner{position:fixed;z-index:60;top:calc(env(safe-area-inset-top) + 10px);left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:490px;padding:12px;border-radius:14px;background:#f5d8a9;color:#372341;box-shadow:0 8px 35px #0006;display:flex;align-items:center;justify-content:space-between;font-size:12px;gap:10px}.update-banner[hidden]{display:none}.update-banner button{padding:10px;background:#372341;color:#f5d8a9;border-radius:9px;font-size:11px;font-weight:800}.motion-off *, .motion-off *:before,.motion-off *:after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 @media(max-width:370px){.app{padding-left:12px;padding-right:12px}.die{width:52px;height:52px;padding:8px}.pip{width:8px;height:8px}.dice-field{gap:16px}.stats{padding:13px 16px}.level{font-size:8px}.world-line{font-size:9px}.arena{min-height:302px}.table-scene{height:207px}.item-desc{font-size:9px}.up-card{grid-template-columns:34px minmax(0,1fr) auto;gap:8px}.item-icon{width:32px;height:36px;font-size:19px}.buy{min-width:70px}}
 
+/* ROLLVERSE BLOCKWORLD */
+:root{--bg:#e9f5ff;--white:#17233e;--muted:#667994;--mint:#24ab7c;--stroke:#24446526;--yellow:#f59e0b;--purple:#7556dd}
+html,body{background:#e9f5ff;color:#17233e;font-family:ui-rounded,'Arial Rounded MT Bold',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}body:before{background:linear-gradient(#d9efff,#f2f9ff);opacity:1}.app{max-width:560px;padding:0 16px calc(108px + env(safe-area-inset-bottom))}header{padding:calc(env(safe-area-inset-top) + 17px) 0 17px;gap:10px}.brand{gap:8px}.brand strong{font-weight:950;font-size:16px;letter-spacing:.4px}.brand small{color:#6990b0;letter-spacing:1.4px;font-size:8px}.logo{border:3px solid #263751;border-radius:11px;background:#ffce40;box-shadow:0 4px 0 #263751;width:40px;height:40px;cursor:pointer;user-select:none}.level{display:none}.gem-wallet{display:flex;align-items:center;gap:6px;padding:8px 11px;background:#815bdf;color:#fff;border:2px solid #402961;border-radius:10px;box-shadow:0 4px 0 #402961;font-weight:900;font-size:13px;white-space:nowrap}.gem-wallet em{font-style:normal;background:#fff3;border-radius:5px;padding:0 4px}.stats{background:#fff;border:2px solid #c8daec;border-radius:16px;box-shadow:0 5px 0 #bed2e6;padding:14px 17px}.stats:after{background:#ffd34d30}.eyebrow{color:#75869e;font-size:9px}.big-money{color:#17233e;font-size:34px;font-weight:950}.big-money span{color:#f0a724;text-shadow:1px 1px #8c6218}.statrow{border-top:1px solid #dfebf6;margin-top:10px;padding-top:10px}.statrow b{color:#243955}.statrow small{color:#7a8b9f}.section-head{margin-bottom:12px}h2{font-weight:950;font-size:21px;letter-spacing:-.6px}.pill{color:#795f0d;background:#fff4c1;border:2px solid #e7c956;border-radius:7px;font-size:9px;padding:5px 8px}.page{margin-top:19px}.arena{--felt:#5db991;--edge:#aae69b;--glow:#82ddb6;min-height:345px;padding:14px 13px 17px;background:linear-gradient(#9ae0ff 0%,#c2edff 50%,#8bce82 51%,#aee493);border:3px solid #557d8b;border-radius:14px;box-shadow:0 6px 0 #527a83,0 12px 20px #5c8da52b;isolation:isolate}.arena:before{background-image:linear-gradient(#ffffff10 1px,transparent 1px),linear-gradient(90deg,#ffffff10 1px,transparent 1px);background-size:22px 22px;opacity:1}.arena-head strong{color:#286271;font-size:9px;font-weight:950}.arena-head span{color:#41727f;font-size:9px}.arena-caption{color:#2c6048;font-size:9px;font-weight:800}.arena[data-world="1"]{--felt:#279678;--edge:#adffc9;--glow:#91eed0;background:linear-gradient(#88e4ce,#baffd9 50%,#359964 51%,#83cf98)}.arena[data-world="2"]{--felt:#4d93c2;--edge:#caefff;--glow:#9edeff;background:linear-gradient(#a0bbef,#deefff 50%,#9bbed9 51%,#c8e9ec)}.arena[data-world="3"]{--felt:#a86546;--edge:#ffd98b;--glow:#ffd98b;background:linear-gradient(#f8ae78,#ffe7b5 50%,#af7944 51%,#d9a362)}.table-scene{margin:24px -5px 0;height:241px}.board-plinth{top:58px;height:170px;width:93%;border-radius:12px;transform:rotateX(38deg) rotateZ(-8deg);background:linear-gradient(145deg,#baff7c,#73bc45);border:4px solid #386b46;box-shadow:0 11px 0 #774f35,0 20px 0 #49372b,0 27px 14px #2e624b55}.board-plinth:before{inset:10px;border-radius:6px;background:linear-gradient(135deg,#ffffff18,transparent),var(--felt);border:3px solid #377260;box-shadow:inset 0 3px 9px #284e4844}.board-plinth:after{font-size:82px;color:#dcffd9;border-radius:3px;inset:24px}.board-runes{inset:20px;opacity:.5;color:#def7d0}.dice-field{margin-top:31px;gap:20px 22px}.die{border:2px solid #555177;border-radius:11px;box-shadow:inset 0 2px 1px #fff,5px 7px 0 #8882aa,6px 10px 0 #49455f,10px 18px 9px #153d3a44;width:61px;height:61px}.die:before{border:1px solid #ffffff90}.die[data-color="0"]{background:linear-gradient(135deg,#fff,#f0e7ff);--pip:#59447b}.die .pip{box-shadow:none}.crystal{display:none}.cloud-block{position:absolute;z-index:0;width:68px;height:17px;background:#fff9;top:18px;left:10px;border-radius:3px;box-shadow:12px -9px 0 -2px #fffa,-10px 7px 0 -3px #fffa}.cloud-block.two{left:auto;right:21px;top:36px;transform:scale(.7)}.voxel-tree{position:absolute;z-index:2;width:22px;height:38px;left:19px;top:21px;background:linear-gradient(90deg,#a06b44 50%,#825236 50%);border:2px solid #4f5a39;box-shadow:3px 3px 0 #2e54383b}.voxel-tree:before{content:"";position:absolute;width:44px;height:38px;left:-13px;top:-20px;background:linear-gradient(110deg,#6cbd52 50%,#439552 50%);border:2px solid #32654d;box-shadow:5px 5px 0 #3a874a}.voxel-tree.right{left:auto;right:28px;top:43px;transform:scale(.8)}.voxel-house{position:absolute;right:54px;top:0;width:36px;height:39px;background:linear-gradient(90deg,#ffe4ab 65%,#d8ae69 65%);border:2px solid #8c7354;z-index:1;box-shadow:4px 4px 0 #5d806e33}.voxel-house:before{content:"";position:absolute;width:45px;height:12px;background:#ee7766;top:-10px;left:-6px;border:2px solid #9a4a46;transform:skewX(-15deg)}.voxel-house:after{content:"";position:absolute;width:8px;height:12px;left:10px;bottom:0;background:#856447;border:2px solid #635239}.arena[data-world="2"] .voxel-tree:before{background:linear-gradient(110deg,#ecfcff 50%,#9dccdb 50%);border-color:#5c8d9d}.arena[data-world="3"] .voxel-tree:before{background:linear-gradient(110deg,#ffc966 50%,#da8c4f 50%);border-color:#94633c}.ghost-die{border:2px dashed #2c7d7166;color:#226d7066;background:#f0ffee35;border-radius:8px}.world-line{color:#66808c}.world-line b{color:#2c614b}.world-progress{background:#bdd8e7;height:6px;border:1px solid #b0c7db}.world-progress div{background:linear-gradient(90deg,#32bd87,#9bde69)}.roll-btn{background:linear-gradient(#ffdb48,#ffbd20);border:3px solid #866415;color:#5d400b;border-radius:12px;box-shadow:0 6px 0 #b08220,0 10px 12px #9a7e3725;min-height:61px;font-size:20px;letter-spacing:1px;text-shadow:0 1px #fff7}.roll-btn:active{box-shadow:0 2px 0 #b08220}.focus-wrap small{color:#5e738d}.focus-track{background:#c4d8ec;height:8px;border:1px solid #aac4dc}.focus-track div{background:linear-gradient(90deg,#985ddb,#e47bbf)}.focus-wrap.hot small{color:#b9770a}.focus-wrap.hot .focus-track div{background:#ffd139}.quick-up{border:2px solid #b9d8cd;background:#edfff5;min-height:46px;border-radius:9px;box-shadow:0 3px #bedfd0}.quick-up b{color:#32694f}.quick-up span{color:#5f8975}.small-panel{background:#fff;border:2px solid #cadcec;border-radius:11px}.small-panel strong{color:#203a57}.small-panel small{color:#8396aa}.skill{background:linear-gradient(110deg,#ad79f4,#8163d9);border:2px solid #634796;color:#fff;border-radius:11px;box-shadow:0 4px #634796}.skill .left small{color:#f0e8ff}.skill i{background:#ffffff24}.challenge{background:#fff;border:2px solid #d1dbe9;border-radius:12px;box-shadow:0 4px #d7e4ef}.challenge small{color:#c98a19}.muted,.meta{color:#75859b}.progress{background:#d4e3f0}.progress>div{background:linear-gradient(90deg,#7961df,#42d6a4)}.claim{background:#5cce92;border:2px solid #349464;color:#174d31;border-radius:8px}.up-card,.card{background:#fff;border:2px solid #c9daeb;border-radius:12px;box-shadow:0 3px #d8e5f1}.item-name{color:#263854;font-size:13px}.item-desc{color:#8390a2}.item-icon{background:#e8efff;border-radius:8px;border:2px solid #c8d3f1}.level-tag{color:#8963bf}.buy{background:#6aca92;border:2px solid #348558;color:#1c4930;border-radius:8px;box-shadow:0 3px #348558;min-width:82px}.buy span{color:#315944}.buy:disabled{opacity:.42;background:#d9e5ea;border-color:#a1b0be;box-shadow:0 3px #a1b0be}.prestige-head{background:linear-gradient(135deg,#ede0ff,#fff)}.star-number{color:#c88700;text-shadow:1px 1px #eedf95}.prestige-button{background:linear-gradient(#ffe05a,#ffc734);border:2px solid #b58821;box-shadow:0 4px #b58821;border-radius:9px}.prestige-button:disabled{background:#c5c9d8;color:#71748b;box-shadow:none}.achievement{background:#fff;border:2px solid #cbdcea;border-radius:10px}.achievement .badge-icon{background:#e9ecf5}.achievement.unlocked .badge-icon{background:#fff1c1}.achievement b{color:#2f4660}.achievement p{color:#7a8ea0}.switch{background:#e6eefa;color:#50657f;border:2px solid #becee0;border-radius:7px}.settings-row{border-color:#d8e5ef}.footer-note{color:#8a9db5}.bottom{max-width:560px;background:#fff;border-top:3px solid #baccdd;backdrop-filter:none;padding-top:6px}.tab{color:#6e829d;border-radius:9px;font-size:9px;font-weight:900;padding:8px 0;gap:4px}.tab.active{color:#244853;background:#c4efda;border:2px solid #74bfa0;box-shadow:0 2px #74bfa0}.tab[data-tab="shop"]{color:#8253ba}.tab[data-tab="shop"].active{background:#e7d9ff;border-color:#b696e3;box-shadow:0 2px #b696e3}.tab-icon{font-size:21px!important}.toast{background:#273c59;border:2px solid #577491;box-shadow:0 6px #17283e;color:#fff;border-radius:11px}.coin-float{color:#ffe445;text-shadow:-2px -2px #725713,2px -2px #725713,-2px 2px #725713,2px 2px #725713;font-size:31px}.reward-label{color:#ffed64;text-shadow:2px 2px #895525,-1px -1px #895525}.pet-strip{margin-top:14px;display:flex;align-items:center;gap:10px;background:#fff;border:2px solid #cddde9;box-shadow:0 3px #d4e5ef;border-radius:11px;padding:10px 12px;min-height:52px}.pet-strip b{display:block;font-size:11px}.pet-strip small{font-size:9px;color:#8093aa;display:block;margin-top:3px}.pet-strip button{margin-left:auto;font-size:9px;font-weight:900;border:2px solid #d0b6ef;border-radius:7px;background:#eee2ff;color:#7955ad;padding:8px}.pixel-pet{display:inline-block;width:32px;height:29px;background:#ffb56f;border:2px solid #a46940;box-shadow:3px 3px #d08247;position:relative;border-radius:2px;flex-shrink:0}.pixel-pet:before{content:"";position:absolute;left:5px;top:10px;width:4px;height:5px;background:#372e46;box-shadow:13px 0 #372e46}.pixel-pet:after{content:"";position:absolute;left:8px;bottom:3px;width:10px;height:6px;background:#fff4d9}.pixel-pet[data-pet="golem"]{background:#83ccaa;border-color:#38795e;box-shadow:3px 3px #51a787}.pixel-pet[data-pet="dragon"]{background:#bc9aee;border-color:#7450a5;box-shadow:3px 3px #8e6bbd}.premium-banner{background:linear-gradient(125deg,#884ee0,#be75eb);color:#fff;border:3px solid #5e3593;border-radius:14px;padding:19px 16px;position:relative;overflow:hidden;box-shadow:0 6px #5e3593}.premium-banner h2{font-size:26px;position:relative;z-index:1;color:#fff}.premium-banner p{font-size:11px;color:#f1ddff;line-height:1.5;position:relative;z-index:1;margin-top:7px;max-width:75%}.premium-banner:after{content:"💎";font-size:78px;position:absolute;right:-10px;top:15px;transform:rotate(-15deg);opacity:.65}.shop-meta{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:9px;font-size:12px}.shop-meta b{color:#8050c6}.shop-note{margin-top:13px;padding:9px 11px;background:#e8def8;border:1px solid #d2b9ed;border-radius:8px;font-size:10px;line-height:1.45;color:#715297}.packs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:14px}.gem-pack{background:#fff;border:2px solid #c9b9e9;border-radius:12px;text-align:center;position:relative;padding:19px 5px 11px;box-shadow:0 4px #c9b9e9;min-width:0}.gem-pack .tag{position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-size:7px;white-space:nowrap;background:#ffa840;color:#76501c;padding:3px 5px;border:1px solid #bb832d;border-radius:4px;font-weight:900}.gem-pack.best{border-color:#b286e6;box-shadow:0 4px #b286e6;background:#f5ebff}.gem-pack .gem-art{font-size:31px;display:block;filter:drop-shadow(0 4px 0 #bca1db66);margin-bottom:6px}.gem-pack strong{display:block;font-size:20px;color:#7151ad;font-weight:950}.gem-pack small{display:block;color:#8b74af;font-size:8px;margin:4px 0 9px}.gem-pack button{width:100%;background:#a679e6;border:2px solid #7751a9;box-shadow:0 3px #7751a9;color:#fff;border-radius:7px;font-size:11px;font-weight:850;padding:7px 2px}.store-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.store-item{border:2px solid #cadcec;border-radius:12px;background:#fff;overflow:hidden;box-shadow:0 4px #cadcec;position:relative}.item-art{height:97px;background:repeating-linear-gradient(135deg,#ffffff0c 0 10px,transparent 10px 20px),linear-gradient(130deg,#72c8f7,#b5e9ff);display:grid;place-items:center;position:relative;border-bottom:2px solid #cbd9e7}.item-art .big-icon{font-size:43px;filter:drop-shadow(0 5px #0002);transform:rotate(-8deg);animation:itemBob 4s ease-in-out infinite}.item-art.gold{background:repeating-linear-gradient(135deg,#ffffff1c 0 10px,transparent 10px 20px),linear-gradient(130deg,#ffe15a,#ffb444)}.item-art.purple{background:repeating-linear-gradient(135deg,#ffffff0c 0 10px,transparent 10px 20px),linear-gradient(130deg,#a58af3,#d4b1ff)}.item-art.green{background:repeating-linear-gradient(135deg,#ffffff1c 0 10px,transparent 10px 20px),linear-gradient(130deg,#75d2a8,#c5f3aa)}.item-art.red{background:repeating-linear-gradient(135deg,#ffffff0c 0 10px,transparent 10px 20px),linear-gradient(130deg,#fa916a,#ffd184)}.rarity{position:absolute;top:6px;left:7px;font-weight:900;letter-spacing:.4px;font-size:7px;color:#fff;background:#3b477b70;border:1px solid #ffffff55;border-radius:4px;padding:3px 5px}.item-content{padding:11px}.item-content h3{font-size:12px;font-weight:900}.item-content p{font-size:9px;color:#7b8da1;margin:5px 0 9px;line-height:1.45;min-height:27px}.store-buy{width:100%;min-height:37px;border:2px solid #68489a;border-radius:7px;background:#9b77dc;box-shadow:0 3px #68489a;color:#fff;font-size:11px;font-weight:900}.store-buy:disabled{background:#e1e5f0;box-shadow:0 3px #acb5c9;border-color:#acb5c9;color:#7a879e;opacity:1}.store-buy.equip{background:#71cb9b;border-color:#43906a;box-shadow:0 3px #43906a}.daily-card{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;border:2px solid #d6b96c;border-radius:12px;background:#fff4d2;box-shadow:0 3px #d6b96c;padding:13px}.daily-card b{display:block;font-size:12px;color:#8b6519}.daily-card small{font-size:9px;color:#a27f36;display:block;margin-top:4px}.daily-card button{font-size:10px;color:#724d15;background:#ffdd75;border:2px solid #c39736;border-radius:7px;min-height:37px;padding:5px 11px;font-weight:900}.buffs{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.buff{font-size:9px;font-weight:850;border:1px solid #d6b965;background:#fff1b6;border-radius:6px;padding:5px 7px;color:#8b6a1d}.gem-path{margin-top:14px;background:#fff;border:2px solid #cbddeb;border-radius:10px;padding:12px}.gem-path b{font-size:11px}.gem-path small{display:block;font-size:9px;color:#7c91a4;margin-top:4px}.modal-backdrop{position:fixed;inset:0;z-index:80;background:#1c294cb5;backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:20px}.modal-backdrop[hidden]{display:none}.game-modal{width:100%;max-width:360px;max-height:85dvh;overflow:auto;background:#fff;border:3px solid #7654b4;border-radius:16px;box-shadow:0 9px #432d70,0 25px 50px #0005;padding:21px;text-align:center}.game-modal .modal-icon{font-size:46px;display:block;margin-bottom:9px}.game-modal h2{font-size:22px}.game-modal p{font-size:11px;line-height:1.55;color:#8291a7;margin-top:9px}.modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.modal-actions button,.admin-primary{border:2px solid #61409a;box-shadow:0 4px #61409a;background:#9b78df;color:#fff;min-height:43px;border-radius:8px;font-size:12px;font-weight:900}.modal-actions .cancel{border-color:#bccbdc;box-shadow:0 4px #bccbdc;background:#edf2f9;color:#6d8096}.modal-price{font-size:25px;font-weight:900;margin-top:13px;color:#8a59c7}.pin-input{font:900 23px ui-rounded,sans-serif;letter-spacing:5px;text-align:center;border:2px solid #c4b0e2;border-radius:9px;padding:12px;width:100%;margin-top:15px;color:#50377b;background:#f5efff}.admin-note{border:2px solid #adc5df;background:#edf5ff;padding:12px;border-radius:10px;font-size:10px;color:#64829f;line-height:1.55}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.admin-action{min-height:54px;border:2px solid #adbedd;background:#e8efff;border-radius:9px;font-size:11px;font-weight:900;color:#425c83;box-shadow:0 3px #adbedd;padding:7px}.admin-action span{display:block;font-size:8px;font-weight:650;margin-top:4px;color:#7892b6}.admin-toolbar{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:15px}.admin-toolbar span{font-size:10px;font-weight:800;color:#9776c3}.admin-toggle{display:flex;align-items:center;justify-content:space-between;background:#f0e5ff;border:2px solid #c7aeea;border-radius:10px;padding:13px;margin-top:16px;font-size:11px;font-weight:850}.admin-toggle button{min-height:36px;border:2px solid #8b6cbd;color:#745799;background:#fff;border-radius:7px;padding:5px 11px;font-weight:900}.skin-gold .die{background:linear-gradient(#fff49b,#ffbf3e)!important;--pip:#8d5b21!important}.skin-lava .die{background:linear-gradient(#ffbe73,#f37863)!important;--pip:#842f39!important}.skin-neon .die{background:linear-gradient(#a0fff1,#61ccf6)!important;--pip:#276a89!important}.vip-badge{background:#ffdc42;color:#735610;border:2px solid #d29c2e;padding:3px 6px;border-radius:5px;font-size:8px;font-weight:950;margin-left:5px}.achievement-popup{position:fixed;z-index:65;top:calc(env(safe-area-inset-top) + 20px);left:50%;transform:translateX(-50%);background:#fff2a1;color:#806110;border:3px solid #d5a928;box-shadow:0 5px #a67b19;border-radius:12px;padding:14px 20px;text-align:center;pointer-events:none;animation:achievementPop 3s both;font-size:13px;font-weight:900}@keyframes achievementPop{0%{opacity:0;transform:translate(-50%,-40px) scale(.7)}15%,80%{opacity:1;transform:translate(-50%,0) scale(1)}100%{opacity:0;transform:translate(-50%,-20px)}}@keyframes itemBob{50%{transform:translateY(-6px) rotate(7deg)}}
+@media(max-width:370px){.app{padding-left:12px;padding-right:12px}.brand strong{font-size:14px}.brand small{font-size:7px;letter-spacing:.7px}.gem-wallet{font-size:11px;padding:7px 8px}.table-scene{height:214px}.arena{min-height:316px}.die{width:52px;height:52px}.item-content{padding:9px}.item-content h3{font-size:11px}.gem-pack strong{font-size:17px}.item-art{height:86px}.tab{font-size:8px}.packs{gap:6px}.big-money{font-size:30px}.store-grid{gap:9px}}
+
   </style>
 </head>
 <body>
   <div class="app">
     <header>
-      <div class="brand"><div class="logo">🎲</div><div><strong>ROLLVERSE</strong><small>THE LONG GAME · v0.2</small></div></div>
-      <div class="level" id="levelBadge">✦ UNIVERSUM 01</div>
+      <div class="brand"><div class="logo" id="logoBtn" role="button" tabindex="0" aria-label="ROLLVERSE Logo">🎲</div><div><strong>ROLLVERSE<span class="vip-badge" id="vipBadge" hidden>VIP</span></strong><small>BLOCKWORLD · v0.3</small></div></div>
+      <button class="gem-wallet" id="gemWallet" aria-label="Gems und Shop öffnen">💎 <span id="gemBalance">0</span> <em>+</em></button><div class="level" id="levelBadge">✦ UNIVERSUM 01</div>
     </header>
     <div class="stats">
       <div class="eyebrow">Dein Guthaben</div>
@@ -165,14 +170,14 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
         <div class="section-head"><h2 id="worldTitle">Mondschein-Taverne</h2><div class="pill" id="comboTag">✦ KOMBO x1</div></div>
         <div class="arena" id="arena" role="button" tabindex="0" aria-label="Würfel werfen">
           <div class="arena-head"><strong>✦ DEIN WÜRFELBRETT</strong><span id="arenaRuns">0 Würfe</span></div>
-          <div class="table-scene"><div class="board-plinth" aria-hidden="true"><div class="board-runes"><span>✦ · ✧</span><span>✧ · ✦</span></div></div><div class="obelisks" aria-hidden="true"><i class="crystal"></i><i class="crystal"></i><i class="crystal"></i><i class="crystal"></i></div><div class="dice-field" id="diceField"></div></div>
+          <div class="table-scene"><div class="cloud-block" aria-hidden="true"></div><div class="cloud-block two" aria-hidden="true"></div><div class="voxel-tree" aria-hidden="true"></div><div class="voxel-tree right" aria-hidden="true"></div><div class="voxel-house" aria-hidden="true"></div><div class="board-plinth" aria-hidden="true"><div class="board-runes"><span>✦ · ✧</span><span>✧ · ✦</span></div></div><div class="obelisks" aria-hidden="true"><i class="crystal"></i><i class="crystal"></i><i class="crystal"></i><i class="crystal"></i></div><div class="dice-field" id="diceField"></div></div>
           <div class="arena-caption">Jeder Wurf bringt dich einen Schritt weiter.</div>
         </div>
         <div class="world-line"><b id="worldName">✦ MONDSCHEIN</b><span id="worldUnlock">Nächste Welt: 75 K ◈</span></div><div class="world-progress"><div id="worldProgress"></div></div>
         <button class="roll-btn" id="rollBtn"><span class="emoji">🎲</span> WÜRFELN <span class="emoji">✦</span></button>
         <div class="focus-wrap" id="focusWrap"><small id="focusLabel">FOKUS 0 / 30</small><div class="focus-track"><div id="focusProgress"></div></div><small>×1,5 BOOST</small></div>
         <button class="quick-up" id="quickUpgrade"><b>+1 Würfel freischalten</b><span>150 ◈ →</span></button>
-        <div class="minirow">
+        <div class="pet-strip"><span class="pixel-pet" id="petPixel" data-pet="buddy" aria-hidden="true"></span><div><b id="petName">Block Buddy</b><small id="petBonus">Dein erster Begleiter</small></div><button id="petShopBtn">BEGLEITER →</button></div><div class="buffs" id="buffBar"></div><div class="minirow">
           <div class="small-panel"><small>Letzter Wurf</small><strong id="lastDisplay">—</strong></div>
           <div class="small-panel"><small>Aktuell gesammelt</small><strong id="earnedDisplay">0 ◈</strong></div>
         </div>
@@ -197,6 +202,28 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
         <div class="sub-heading"><h3>✨ Permanente Talente</h3><span class="meta" id="starsAvailable">0 ✦ verfügbar</span></div>
         <div class="cards" id="metaList"></div>
       </section>
+      <section class="page" id="page-shop" hidden>
+        <div class="premium-banner"><h2>GEM SHOP 💎</h2><p>Mehr Power. Mehr Style. Deine Würfelwelt bekommt ein Upgrade.</p></div>
+        <div class="shop-meta"><b id="shopBalance">0 💎 GEMS</b><span class="pill" id="adminShopLabel" hidden>ADMIN · GRATIS</span></div>
+        <p class="shop-note">DEMO-SHOP · Europreise sind Vorschauen. Alle Paketkäufe sind simuliert, es erfolgt keine Zahlung. Gems kannst du auch erspielen.</p>
+        <div class="packs" id="gemPacks"></div>
+        <div class="daily-card"><div><b>🎁 Kostenloser Gem-Drop</b><small id="dailyStatus">10 Gems · alle 24 Stunden</small></div><button id="dailyBtn">ABHOLEN</button></div>
+        <div class="gem-path"><b>💎 Grinden lohnt sich: +20 Gems pro 500 Handwürfe</b><small id="gemGrindLabel">0 / 500 manuelle Würfe</small><div class="progress"><div id="gemGrindProgress"></div></div><small>Auch jeder neue Erfolg bringt 10 Gems.</small></div>
+        <div class="sub-heading"><h3>GAMEPASSES · BOOSTS · PETS · SKINS</h3></div><div class="store-grid" id="shopItems"></div>
+        <div class="settings-row"><b>Standard-Würfel</b><button class="switch" id="defaultSkinBtn">AUSRÜSTEN</button></div><div class="settings-row"><b>Block Buddy</b><button class="switch" id="defaultPetBtn">AUSRÜSTEN</button></div>
+      </section>
+      <section class="page" id="page-admin" hidden>
+        <div class="admin-toolbar"><h2>🛠 ADMIN LAB</h2><button class="switch" id="adminLockBtn">SPERREN</button></div>
+        <p class="admin-note">Lokales Entwickler-Panel. Aktionen gelten nur für deinen Spielstand auf diesem Gerät. Die PIN wird getrennt vom exportierten Spielstand gespeichert. Keine Server-Adminverwaltung und keine echten Zahlungen.</p>
+        <p class="meta" id="adminBalances" style="margin-top:12px"></p>
+        <div class="admin-toggle"><span>Alles kostenlos kaufen</span><button id="freeShopToggle">AUS</button></div>
+        <div class="admin-grid" id="adminActions">
+          <button class="admin-action" data-admin="gems">💎 +10.000 GEMS<span>Premiumwährung hinzufügen</span></button><button class="admin-action" data-admin="coins">🪙 +1 MILLION<span>Geld und Fortschritt hinzufügen</span></button>
+          <button class="admin-action" data-admin="dust">✦ +1.000 STERNENSTAUB<span>Permanente Talente testen</span></button><button class="admin-action" data-admin="items">🎁 ALLE SHOP-ITEMS<span>Gamepasses, Pets und Skins</span></button>
+          <button class="admin-action" data-admin="upgrades">⚡ MAX UPGRADES<span>Alle normalen Upgrades maximieren</span></button><button class="admin-action" data-admin="worlds">🌎 ALLE WELTEN<span>Alle Umgebungen freischalten</span></button>
+          <button class="admin-action" data-admin="prestige">🚀 PRESTIGE BEREIT<span>Ziel erreichen · Neustart selbst bestätigen</span></button><button class="admin-action" data-admin="boost">⚡ 60 MINUTEN ×2<span>Einkommensbooster aktivieren</span></button>
+        </div>
+      </section>
       <section class="page" id="page-collection" hidden>
         <div class="section-head"><h2>Sammlung & Statistik</h2><div class="pill">🏆 ERFOLGE</div></div>
         <div class="card" id="allStats"></div>
@@ -204,29 +231,31 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
         <div id="achievementList"></div>
         <div class="sub-heading"><h3>Einstellungen</h3></div>
         <div class="card">
-          <div class="settings-row"><b>Sounds</b><button class="switch" id="soundToggle">AN</button></div>
+          <div class="settings-row"><b>Admin-Menü · lokal</b><button class="switch" id="adminOpenBtn">ÖFFNEN</button></div><div class="settings-row"><b>Sounds</b><button class="switch" id="soundToggle">AN</button></div>
           <div class="settings-row"><b>Ruhige Animationen</b><button class="switch" id="motionToggle">AUS</button></div>
           <div class="settings-row"><b>Spielstand sichern</b><button class="switch" id="exportBtn">EXPORT</button></div>
           <div class="settings-row"><b>Sicherung laden</b><button class="switch" id="importBtn">IMPORT</button><input class="file-input" id="importFile" type="file" accept="application/json,.json"></div>
           <div class="settings-row" style="border-bottom:0"><b>Spielstand zurücksetzen</b><button class="switch" id="resetBtn">ZURÜCKSETZEN</button></div>
           <p class="muted" style="margin-top:6px">Dein Spielstand wird lokal auf diesem Gerät in diesem Browser gespeichert. Es gibt noch keine Cloud-Synchronisierung.</p>
         </div>
-        <p class="footer-note">ROLLVERSE · 0.2 · THE LONG GAME ✦</p>
+        <p class="footer-note">ROLLVERSE · 0.3 · BLOCKWORLD ✦</p>
       </section>
     </main>
   </div>
   <nav class="bottom" aria-label="Navigation">
     <button class="tab active" data-tab="play"><span class="tab-icon">🎲</span>SPIELEN</button>
     <button class="tab" data-tab="upgrades"><span class="tab-icon">⚡</span>UPGRADES</button>
+    <button class="tab" data-tab="shop"><span class="tab-icon">💎</span>SHOP</button>
     <button class="tab" data-tab="prestige"><span class="tab-icon">✦</span>PRESTIGE</button>
     <button class="tab" data-tab="collection"><span class="tab-icon">🏆</span>SAMMLUNG</button>
   </nav>
+  <div class="modal-backdrop" id="gameModal" hidden><div class="game-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><span class="modal-icon" id="modalIcon"></span><h2 id="modalTitle"></h2><p id="modalBody"></p><div class="modal-price" id="modalPrice"></div><input class="pin-input" id="pinInput" type="password" inputmode="numeric" maxlength="12" autocomplete="off" aria-label="Lokale Admin-PIN" hidden><div class="modal-actions"><button class="cancel" id="modalCancel">ZURÜCK</button><button id="modalConfirm">KAUFEN</button></div></div></div>
   <div class="update-banner" id="updateBanner" hidden><b>Neue Version bereit</b><button id="updateBtn">UPDATE LADEN</button></div>
   <div class="toast" role="status" id="toast"></div>
   <script>
   'use strict';
   const SAVE_KEY = 'rollverse-v1';
-  const VERSION='0.2.0', PRESTIGE_BASE=2000000;
+  const VERSION='0.3.0', PRESTIGE_BASE=2000000;
   const upgradeDefs = {
     dice:{icon:'🎲',name:'Mehr Würfel',desc:'+1 Würfel. Mehr Chancen auf Kombos.',base:150,scale:2.65,cap:11},
     power:{icon:'💎',name:'Würfelwert',desc:'+12 % Grundwert je Level',base:100,scale:1.72,cap:100},
@@ -255,10 +284,10 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
     {title:'Sternenmeister',desc:'Sammle insgesamt 10 Sternenstaub',type:'dust',target:10,reward:10000}
   ];
   const worlds=[
-    {name:'Mondschein-Taverne',short:'MONDSCHEIN',at:0},
-    {name:'Der Smaragdgarten',short:'SMARAGDGARTEN',at:75000},
-    {name:'Die Frostzitadelle',short:'FROSTZITADELLE',at:1500000},
-    {name:'Tempel der Morgenröte',short:'MORGENRÖTE',at:25000000}
+    {name:'Block Meadow',short:'BLOCK MEADOW',at:0},
+    {name:'Emerald Jungle',short:'EMERALD JUNGLE',at:75000},
+    {name:'Frost Peaks',short:'FROST PEAKS',at:1500000},
+    {name:'Lava Kingdom',short:'LAVA KINGDOM',at:25000000}
   ];
   const achievements = [
     ['🎲','Los geht’s','Würfle 1-mal', s=>s.totalRolls>=1],
@@ -270,13 +299,125 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
     ['🏆','Vielspieler','Würfle insgesamt 1.000-mal', s=>s.totalRolls>=1000],
     ['🚀','Grenzenlos','Erreiche Prestige 10', s=>s.prestiges>=10]
   ];
-  const initState = () => ({ money:0,runEarned:0,totalEarned:0,totalRolls:0,manualRolls:0,prestiges:0,dust:0,totalDust:0,bestRun:0,mostDice:1,allAutoBought:0,up:{dice:0,power:0,auto:0,tap:0,crit:0,combo:0,lucky:0},meta:{power:0,headstart:0,speed:0,fortune:0},quest:0,overdriveUntil:0,overdriveReady:0,lastRoll:0,lastCombo:1,lastSeen:Date.now(),sound:true,schema:2,motion:false,focus:0,feverUntil:0 });
+  const shopDefs={
+    vip:{name:'VIP FOREVER',icon:'👑',tag:'GAMEPASS',color:'gold',desc:'Dauerhaft ×2 auf alle Einnahmen. Bleibt nach Prestige.',cost:750,kind:'permanent'},
+    gloves:{name:'POWER HANDS',icon:'🥊',tag:'GAMEPASS',color:'red',desc:'Manuelle Würfe bringen dauerhaft 75 % mehr.',cost:450,kind:'permanent'},
+    fortune:{name:'LUCKY CHARM',icon:'🍀',tag:'GAMEPASS',color:'green',desc:'Dauerhaft +3 % Krit-Chance. Jeder Krit bringt ×3.',cost:550,kind:'permanent'},
+    boost:{name:'DOUBLE COINS',icon:'⚡',tag:'15 MINUTEN',color:'purple',desc:'×2 auf alle Einnahmen für 15 Minuten. Zeit stapelbar.',cost:80,kind:'consumable'},
+    warp:{name:'TIME WARP',icon:'⏳',tag:'1 STUNDE',color:'blue',desc:'70 % einer Stunde Roboter-Ertrag sofort. Braucht Wurfroboter.',cost:120,kind:'consumable'},
+    fox:{name:'PIXEL FOX',icon:'🦊',tag:'BEGLEITER',color:'gold',desc:'Ausgerüstet: +15 % auf alle Einnahmen.',cost:250,kind:'pet'},
+    golem:{name:'BLOCK GOLEM',icon:'🗿',tag:'BEGLEITER',color:'green',desc:'Ausgerüstet: +50 % auf manuelle Würfe.',cost:500,kind:'pet'},
+    dragon:{name:'CLOUD DRAGON',icon:'🐉',tag:'BEGLEITER',color:'purple',desc:'Ausgerüstet: +75 % auf Roboter-Einnahmen.',cost:900,kind:'pet'},
+    gold:{name:'GOLDEN DICE',icon:'🎲',tag:'SKIN',color:'gold',desc:'Goldene Würfel für dein Brett. Rein kosmetisch.',cost:150,kind:'skin'},
+    neon:{name:'CYBER DICE',icon:'🔷',tag:'SKIN',color:'blue',desc:'Neonblaue Würfel. Kein Einfluss auf Einnahmen.',cost:200,kind:'skin'},
+    lava:{name:'LAVA DICE',icon:'🌋',tag:'SKIN',color:'red',desc:'Heiße Würfel in Magmafarben. Rein kosmetisch.',cost:300,kind:'skin'}
+  };
+  const gemPacks=[{gems:100,price:'1,99 €',label:'SMALL'},{gems:650,price:'7,99 €',label:'BIG'},{gems:1800,price:'19,99 €',label:'MEGA'}];
+  const petNames={buddy:'Block Buddy',fox:'Pixel Fox',golem:'Block Golem',dragon:'Cloud Dragon'};
+  let adminSession=false,adminFree=false,adminAttempts=0,adminLockUntil=0,logoTaps=0,lastLogoTap=0,modalAction=null;
+  function freeShopping(){return adminSession&&adminFree;}
+  function normalizePremium(){
+    const clean={};for(const key of Object.keys(shopDefs))if(state.items?.[key]===true&&shopDefs[key].kind!=='consumable')clean[key]=true;state.items=clean;
+    for(const key of ['gems','totalGems','gemMilestones','dailyClaim','boostUntil','boostStart'])if(!Number.isFinite(state[key])||state[key]<0)state[key]=0;
+    state.gems=Math.floor(Math.min(1e12,state.gems));state.gemMilestones=Math.floor(state.gemMilestones);
+    if(!['buddy','fox','golem','dragon'].includes(state.activePet)||state.activePet!=='buddy'&&!state.items[state.activePet])state.activePet='buddy';
+    if(!['default','gold','neon','lava'].includes(state.skin)||state.skin!=='default'&&!state.items[state.skin])state.skin='default';
+    state.announced=Array.isArray(state.announced)?state.announced.filter(x=>Number.isInteger(x)&&x>=0&&x<achievements.length):[];
+  }
+  function premiumFactor(manual,at=Date.now()){
+    let value=state.items.vip?2:1;if(manual&&state.items.gloves)value*=1.75;
+    if(state.activePet==='fox')value*=1.15;if(manual&&state.activePet==='golem')value*=1.5;if(!manual&&state.activePet==='dragon')value*=1.75;
+    if(at>=state.boostStart&&at<state.boostUntil)value*=2;return value;
+  }
+  function addGems(amount){if(!Number.isFinite(amount)||amount<=0)return;state.gems=Math.min(1e12,state.gems+Math.floor(amount));state.totalGems+=Math.floor(amount);}
+  function popup(message){const el=document.createElement('div');el.className='achievement-popup';el.textContent=message;document.body.appendChild(el);setTimeout(()=>el.remove(),3000);}
+  function notifyMilestones(){
+    const count=Math.floor(state.manualRolls/500);if(count>state.gemMilestones){const earned=(count-state.gemMilestones)*20;state.gemMilestones=count;addGems(earned);popup('💎 Meilenstein! +'+fmt(earned)+' Gems');}
+    achievements.forEach((a,i)=>{if(a[3](state)&&!state.announced.includes(i)){state.announced.push(i);addGems(10);if(i!==0)toast('🏆 '+a[1]+' · +10 Gems');}});
+  }
+  function openModal(icon,title,body,price,action,confirmText='KAUFEN'){
+    modalAction=action;$('modalIcon').textContent=icon;$('modalTitle').textContent=title;$('modalBody').textContent=body;$('modalPrice').textContent=price;$('modalConfirm').textContent=confirmText;
+    $('pinInput').hidden=true;$('pinInput').value='';$('modalCancel').textContent='ZURÜCK';$('gameModal').hidden=false;
+  }
+  function closeModal(){modalAction=null;$('gameModal').hidden=true;$('pinInput').value='';}
+  function requestPurchase(key){
+    const def=shopDefs[key];if(!def)return;
+    if(state.items[key]){if(def.kind==='pet')state.activePet=key;if(def.kind==='skin')state.skin=key;save();render(true);return;}
+    if(def.kind==='consumable'&&key==='warp'&&!state.up.auto){toast('Schalte zuerst einen Wurfroboter frei.');return;}
+    const free=freeShopping();if(!free&&state.gems<def.cost){toast('Nicht genug Gems. Pakete und kostenlose Gems findest du oben.');return;}
+    openModal(def.icon,def.name,def.desc+(free?' Admin-Modus: kostenlos.':''),free?'ADMIN · GRATIS':def.cost+' 💎',()=>buyPremium(key),'FREISCHALTEN');
+  }
+  function buyPremium(key){
+    const def=shopDefs[key];if(!def)return false;
+    if(state.items[key]||key==='warp'&&!state.up.auto)return false;
+    const free=freeShopping();if(!free&&state.gems<def.cost)return false;
+    if(!free)state.gems-=def.cost;
+    if(def.kind==='consumable'){
+      if(key==='boost'){const now=Date.now();if(state.boostUntil<=now)state.boostStart=now;state.boostUntil=Math.max(now,state.boostUntil)+900000;}
+      if(key==='warp')addIncome(expectedRoll(false,Date.now()+1e20)/autoInterval()*3600*.70);
+    }else{state.items[key]=true;if(def.kind==='pet')state.activePet=key;if(def.kind==='skin')state.skin=key;}
+    sound();save();render(true);popup(def.icon+' '+def.name+' freigeschaltet!');return true;
+  }
+  function requestGemPack(index){
+    const pack=gemPacks[index];if(!pack)return;
+    openModal('💎',pack.label+' GEM PACK','Demo-Kauf: Du erhältst '+fmt(pack.gems)+' Gems. Es wird kein Geld abgebucht. Der angezeigte Europreis ist eine Vorschau.',pack.price+' · DEMO',()=>{addGems(pack.gems);save();render(true);popup('💎 +'+fmt(pack.gems)+' Gems!');},'DEMO AKTIVIEREN');
+  }
+  function claimDaily(){if(Date.now()-state.dailyClaim<86400000)return;state.dailyClaim=Date.now();addGems(10);save();render(true);popup('🎁 +10 kostenlose Gems!');}
+  function renderShop(full){
+    $('shopBalance').textContent=fmt(state.gems)+' 💎 GEMS';
+    if(full||!$('shopItems').children.length){
+      $('gemPacks').innerHTML=gemPacks.map((p,i)=>`<div class="gem-pack ${i===2?'best':''}">${i===2?'<span class="tag">MEISTE GEMS / €</span>':''}<span class="gem-art">${i===0?'💎':i===1?'💠':'💎'}</span><strong>${fmt(p.gems)}</strong><small>${p.label} GEM PACK</small><button data-pack="${i}">${p.price}<small style="color:#eee;margin:2px 0 0;font-size:7px">DEMO-KAUF</small></button></div>`).join('');
+      $('shopItems').innerHTML=Object.entries(shopDefs).map(([key,d])=>{const owned=!!state.items[key],equipped=d.kind==='pet'?state.activePet===key:d.kind==='skin'?state.skin===key:false;
+        return `<div class="store-item"><div class="item-art ${d.color}"><span class="rarity">${d.tag}</span><span class="big-icon">${d.icon}</span></div><div class="item-content"><h3>${d.name}</h3><p>${d.desc}</p><button class="store-buy ${owned?'equip':''}" data-shop="${key}">${equipped?'✓ AUSGERÜSTET':owned?d.kind==='pet'||d.kind==='skin'?'AUSRÜSTEN':'✓ FREIGESCHALTET':freeShopping()?'ADMIN · GRATIS':d.cost+' 💎'}</button></div></div>`;}).join('');
+    }
+    $('shopItems').querySelectorAll('[data-shop]').forEach(btn=>{const key=btn.dataset.shop,d=shopDefs[key],owned=!!state.items[key];btn.disabled=owned&&d.kind==='permanent'||d.kind==='pet'&&state.activePet===key||d.kind==='skin'&&state.skin===key||key==='warp'&&!state.up.auto||!owned&&!freeShopping()&&state.gems<d.cost;});
+    const ready=Date.now()-state.dailyClaim>=86400000;$('dailyBtn').disabled=!ready;$('dailyBtn').textContent=ready?'ABHOLEN':'ABGEHOLT';
+    $('dailyStatus').textContent=ready?'10 Gems · alle 24 Stunden':'Wieder bereit in '+Math.ceil((state.dailyClaim+86400000-Date.now())/3600000)+' Std.';
+    const target=(state.gemMilestones+1)*500;$('gemGrindLabel').textContent=fmt(state.manualRolls)+' / '+fmt(target)+' manuelle Würfe';$('gemGrindProgress').style.width=Math.min(100,100*(state.manualRolls-state.gemMilestones*500)/500)+'%';
+    $('adminShopLabel').hidden=!freeShopping();
+  }
+  function renderPremiumHud(){
+    $('gemBalance').textContent=fmt(state.gems);$('vipBadge').hidden=!state.items.vip;
+    const field=$('diceField');field.classList.toggle('skin-gold',state.skin==='gold');field.classList.toggle('skin-neon',state.skin==='neon');field.classList.toggle('skin-lava',state.skin==='lava');
+    $('petPixel').dataset.pet=state.activePet;$('petName').textContent=petNames[state.activePet];$('petBonus').textContent=state.activePet==='buddy'?'Dein erster Begleiter · im Shop verbessern':shopDefs[state.activePet].desc.replace('Ausgerüstet: ','');
+    const buffs=[];if(state.items.vip)buffs.push('👑 VIP ×2');if(state.items.gloves)buffs.push('🥊 HAND ×1,75');if(Date.now()<state.boostUntil)buffs.push('⚡ ×2 BOOST '+Math.ceil((state.boostUntil-Date.now())/60000)+' MIN');if(freeShopping())buffs.push('🛠 ADMIN GRATIS');
+    const stamp=buffs.join('|');if($('buffBar').dataset.stamp!==stamp){$('buffBar').innerHTML=buffs.map(b=>'<span class="buff">'+b+'</span>').join('');$('buffBar').dataset.stamp=stamp;}
+  }
+  async function hashAdminPin(pin,salt){const bytes=new TextEncoder().encode(salt+':'+pin),digest=await crypto.subtle.digest('SHA-256',bytes);return Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');}
+  function adminConfig(){try{const config=JSON.parse(localStorage.getItem('rollverse-admin-v1'));return config&&typeof config.salt==='string'&&typeof config.hash==='string'?config:null;}catch{return null;}}
+  function openAdmin(){
+    if(adminSession){changePage('admin');return;}if(Date.now()<adminLockUntil){toast('Bitte '+Math.ceil((adminLockUntil-Date.now())/1000)+' Sekunden warten.');return;}
+    const setup=!adminConfig();openModal('🛠',setup?'Deine Admin-PIN':'Admin entsperren',setup?'Lege eine eigene PIN mit 4–12 Ziffern fest. Das Panel gilt nur auf diesem Gerät. Eine statische Web-App bietet keine sichere Server-Adminverwaltung.':'Gib deine lokale Admin-PIN ein. Die Freischaltungen verändern nur diesen Spielstand.','',async()=>{
+      if(Date.now()<adminLockUntil){toast('PIN-Eingabe vorübergehend gesperrt.');return false;}const pin=$('pinInput').value;if(!/^\d{4,12}$/.test(pin)){toast('Bitte 4–12 Ziffern eingeben.');return false;}
+      if(!crypto?.subtle){toast('Für die PIN wird eine HTTPS-Verbindung benötigt.');return false;}
+      const config=adminConfig();if(!config){const salt=Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');localStorage.setItem('rollverse-admin-v1',JSON.stringify({salt,hash:await hashAdminPin(pin,salt)}));}
+      else if(await hashAdminPin(pin,config.salt)!==config.hash){adminAttempts++;if(adminAttempts>=5){adminLockUntil=Date.now()+60000;adminAttempts=0;}toast('PIN stimmt nicht.');$('pinInput').value='';return false;}
+      adminSession=true;adminAttempts=0;changePage('admin');toast('🛠 Admin-Menü entsperrt');return true;
+    },setup?'PIN FESTLEGEN':'ENTSPERREN');$('pinInput').hidden=false;$('pinInput').focus();
+  }
+  function adminAction(key){
+    if(!adminSession)return false;
+    if(key==='gems')addGems(10000);
+    if(key==='coins')addIncome(1000000);
+    if(key==='dust'){state.dust+=1000;state.totalDust+=1000;}
+    if(key==='items'){for(const [id,d] of Object.entries(shopDefs))if(d.kind!=='consumable')state.items[id]=true;state.activePet='dragon';state.skin='gold';}
+    if(key==='upgrades'){for(const [id,d] of Object.entries(upgradeDefs))state.up[id]=d.cap;state.allAutoBought++;state.mostDice=12;drawDice();}
+    if(key==='worlds')state.totalEarned=Math.max(state.totalEarned,worlds[worlds.length-1].at);
+    if(key==='prestige'){state.runEarned=Math.max(state.runEarned,prestigeTarget());changePage('prestige');save();return true;}
+    if(key==='boost'){state.boostStart=Date.now();state.boostUntil=Date.now()+3600000;}
+    save();render(true);toast('🛠 Admin-Aktion ausgeführt');return true;
+  }
+  function renderAdmin(){
+    if(!adminSession){changePage('collection');return;}$('adminBalances').textContent=fmt(state.money)+' ◈ · '+fmt(state.gems)+' 💎 · '+fmt(state.dust)+' ✦';$('freeShopToggle').textContent=adminFree?'AN':'AUS';
+  }
+
+  const initState = () => ({ money:0,runEarned:0,totalEarned:0,totalRolls:0,manualRolls:0,prestiges:0,dust:0,totalDust:0,bestRun:0,mostDice:1,allAutoBought:0,up:{dice:0,power:0,auto:0,tap:0,crit:0,combo:0,lucky:0},meta:{power:0,headstart:0,speed:0,fortune:0},quest:0,overdriveUntil:0,overdriveReady:0,lastRoll:0,lastCombo:1,lastSeen:Date.now(),sound:true,schema:3,motion:false,focus:0,feverUntil:0,gems:0,totalGems:0,gemMilestones:0,dailyClaim:0,boostUntil:0,boostStart:0,items:{},activePet:"buddy",skin:"default",announced:[] });
   let state;
   try { const raw=localStorage.getItem(SAVE_KEY); state=raw?JSON.parse(raw):initState(); } catch(e){ state=initState(); }
   if(!state || typeof state!=='object' || !state.up || !state.meta) state=initState();
-  const migrated=state.schema!==2;
+  const migrated=state.schema!==3;
   state={...initState(),...state,up:{...initState().up,...state.up},meta:{...initState().meta,...state.meta}};
-  if(migrated){try{localStorage.setItem('rollverse-v1-before-0.2',JSON.stringify(state));}catch(e){}state.schema=2;state.focus=0;state.feverUntil=0;}
+  if(migrated){try{localStorage.setItem('rollverse-v1-before-0.3',JSON.stringify(state));}catch(e){}state.schema=3;state.focus=0;state.feverUntil=0;}
   // Sanitize saved numeric fields to avoid rendering invalid state.
   for(const field of ['money','runEarned','totalEarned','totalRolls','manualRolls','prestiges','dust','totalDust','bestRun','mostDice','allAutoBought','quest','overdriveUntil','overdriveReady','lastRoll','lastCombo','lastSeen','focus','feverUntil']){
     if(!Number.isFinite(state[field]) || state[field]<0) state[field]=initState()[field];
@@ -284,6 +425,7 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
   for(const group of ['up','meta']) for(const [key,val] of Object.entries(state[group])) if(!Number.isFinite(val) || val<0) state[group][key]=0;
   for(const [group,defs] of [['up',upgradeDefs],['meta',metaDefs]])for(const key of Object.keys(defs))state[group][key]=Math.min(defs[key].cap,Math.floor(state[group][key]));
   state.quest=Math.min(100000,Math.floor(state.quest));state.focus=Math.min(29,Math.floor(state.focus));
+  normalizePremium();
   document.body.classList.toggle('motion-off',!!state.motion);
   let lastManual=-Infinity,visualUntil=0,hiddenAt=null;
   let activePage='play',lastTick=Date.now(),lastSave=0,lastRender=0,autoAccumulator=0,lastToast=0,audioContext=null;
@@ -298,7 +440,7 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
   function cost(def,lvl){return Math.ceil(def.base*Math.pow(def.scale,lvl));}
   function diceCount(){return 1+state.up.dice;}
   function multiplier(){return (1+state.up.power*.12)*(1+state.meta.power*.15);}
-  function critChance(){return Math.min(.45,.025+state.up.crit*.01+state.meta.fortune*.005);}
+  function critChance(){return Math.min(.45,.025+state.up.crit*.01+state.meta.fortune*.005+(state.items.fortune?0.03:0));}
   function luckyChance(){return Math.min(.12,.005+state.up.lucky*.003);}
   function autoInterval(){if(!state.up.auto) return Infinity;return Math.max(.8,7/Math.pow(1.095,state.up.auto-1)/(1+state.meta.speed*.05));}
   let comboCacheKey='',comboCache=1;
@@ -315,8 +457,8 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
       for(let count=0;count<=left;count++)visit(face+1,left-count,denom*factorial[count],Math.max(max,count));
     }visit(0,n,1,0);comboCacheKey=key;comboCache=sum;return sum;
   }
-  function expectedRoll(isManual=false){
-    return 3.5*diceCount()*multiplier()*(1+critChance()*2)*(1+luckyChance()*4)*expectedCombo()*(isManual?1+state.up.tap*.15:1);
+  function expectedRoll(isManual=false,at=Date.now()){
+    return 3.5*diceCount()*multiplier()*(1+critChance()*2)*(1+luckyChance()*4)*expectedCombo()*(isManual?1+state.up.tap*.15:1)*premiumFactor(isManual,at);
   }
   function perSecond(){return Number.isFinite(autoInterval())?expectedRoll()/autoInterval():0;}
   function prestigeTarget(){return PRESTIGE_BASE*Math.pow(1.32,state.prestiges);}
@@ -362,16 +504,16 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
     const now=Date.now();if(manual&&now-lastManual<650)return false;if(manual)lastManual=now;
     const faces=Array.from({length:diceCount()},()=>1+Math.floor(Math.random()*6));
     const combo=comboFactor(faces),crit=Math.random()<critChance(),lucky=Math.random()<luckyChance();
-    let reward=faces.reduce((a,b)=>a+b,0)*multiplier()*combo*(manual?1+state.up.tap*.15:1)*(crit?3:1)*(lucky?5:1);
+    let reward=faces.reduce((a,b)=>a+b,0)*multiplier()*combo*(manual?1+state.up.tap*.15:1)*(crit?3:1)*(lucky?5:1)*premiumFactor(manual,now);
     if(now<state.overdriveUntil)reward*=2;if(manual&&now<state.feverUntil)reward*=1.5;
     addIncome(reward);state.totalRolls++;if(manual){state.manualRolls++;if(now>=state.feverUntil){state.focus++;if(state.focus>=30){state.focus=0;state.feverUntil=now+8000;toast('✦ FOKUS! 8 Sekunden ×1,5 auf manuelle Würfe');}}}
     state.lastRoll=reward;state.lastCombo=combo;state.mostDice=Math.max(state.mostDice,diceCount());
     if(manual||now>visualUntil){lastFaces=faces;drawDice(true,crit||lucky);visualUntil=now+600;rewardEffects(reward,crit,lucky,combo,manual);}
-    if(manual){sound();$('rollBtn').classList.add('cooling');setTimeout(()=>$('rollBtn').classList.remove('cooling'),650);}return true;
+    if(manual){notifyMilestones();sound();$('rollBtn').classList.add('cooling');setTimeout(()=>$('rollBtn').classList.remove('cooling'),650);}return true;
   }
   function upgrade(key){
     const def=upgradeDefs[key],lv=state.up[key];if(!def||lv>=def.cap)return;
-    const amount=cost(def,lv);if(state.money+1e-8<amount)return;
+    const amount=freeShopping()?0:cost(def,lv);if(state.money+1e-8<amount)return;
     state.money-=amount;state.up[key]++;
     if(key==='auto')state.allAutoBought++;
     state.mostDice=Math.max(state.mostDice,diceCount());
@@ -380,7 +522,7 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
   }
   function metaUpgrade(key){
     const def=metaDefs[key],lv=state.meta[key];if(!def||lv>=def.cap)return;
-    const amount=cost(def,lv);if(state.dust<amount)return;
+    const amount=freeShopping()?0:cost(def,lv);if(state.dust<amount)return;
     state.dust-=amount;state.meta[key]++;
     sound();save();render(true);
   }
@@ -412,13 +554,13 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
   }
   function renderUpgrades(){
     $('upgradeList').innerHTML=Object.entries(upgradeDefs).map(([key,d])=>{
-      const lv=state.up[key],max=lv>=d.cap,c=cost(d,lv),enough=state.money>=c;
+      const lv=state.up[key],max=lv>=d.cap,c=freeShopping()?0:cost(d,lv),enough=state.money>=c;
       return `<div class="up-card"><div class="item-icon">${d.icon}</div><div><div class="item-name">${d.name}</div><div class="item-desc">${d.desc}</div><div class="level-tag">LEVEL ${lv}${max?' · MAX':''}</div></div><button class="buy" data-up="${key}" ${max||!enough?'disabled':''}>${max?'MAX':`KAUFEN <span>${fmt(c)} ◈</span>`}</button></div>`;
     }).join('');
   }
   function renderMeta(){
     $('metaList').innerHTML=Object.entries(metaDefs).map(([key,d])=>{
-      const lv=state.meta[key],max=lv>=d.cap,c=cost(d,lv),enough=state.dust>=c;
+      const lv=state.meta[key],max=lv>=d.cap,c=freeShopping()?0:cost(d,lv),enough=state.dust>=c;
       return `<div class="up-card"><div class="item-icon">${d.icon}</div><div><div class="item-name">${d.name}</div><div class="item-desc">${d.desc}</div><div class="level-tag">LEVEL ${lv}${max?' · MAX':''}</div></div><button class="buy" data-meta="${key}" ${max||!enough?'disabled':''}>${max?'MAX':`KAUFEN <span>${fmt(c)} ✦</span>`}</button></div>`;
     }).join('');
   }
@@ -431,7 +573,7 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
     }).join('');
   }
   function render(full=false){
-    const now=Date.now();if(!full && now-lastRender<170)return;lastRender=now;
+    const now=Date.now();if(!full && now-lastRender<170)return;lastRender=now;renderPremiumHud();
     $('moneyDisplay').innerHTML=fmt(state.money)+' <span>◈</span>';
     $('incomeDisplay').textContent=fmt(perSecond())+' ◈';
     $('diceDisplay').textContent=diceCount()+' 🎲';
@@ -449,12 +591,12 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
       const world=worlds.reduce((best,w,i)=>state.totalEarned>=w.at?i:best,0),next=worlds[world+1];
       $('arena').dataset.world=world;$('worldTitle').textContent=worlds[world].name;$('worldName').textContent='✦ '+worlds[world].short;
       $('worldUnlock').textContent=next?'Nächste Welt: '+fmt(next.at)+' ◈':'Alle Welten freigeschaltet';$('worldProgress').style.width=(next?Math.min(100,100*(state.totalEarned-worlds[world].at)/(next.at-worlds[world].at)):100)+'%';
-      const dc=cost(upgradeDefs.dice,state.up.dice),max=state.up.dice>=upgradeDefs.dice.cap;
+      const dc=freeShopping()?0:cost(upgradeDefs.dice,state.up.dice),max=state.up.dice>=upgradeDefs.dice.cap;
       $('quickUpgrade').disabled=max||state.money<dc;$('quickUpgrade').innerHTML='<b>'+(max?'Würfelbrett vollständig':'+1 Würfel freischalten')+'</b><span>'+(max?'12 / 12':fmt(dc)+' ◈ →')+'</span>';
       renderQuest();
     } else if(activePage==='upgrades'){
       if(full || !$('upgradeList').children.length)renderUpgrades();
-      else document.querySelectorAll('[data-up]').forEach(btn=>{const key=btn.dataset.up;btn.disabled=state.up[key]>=upgradeDefs[key].cap || state.money<cost(upgradeDefs[key],state.up[key]);});
+      else document.querySelectorAll('[data-up]').forEach(btn=>{const key=btn.dataset.up;btn.disabled=state.up[key]>=upgradeDefs[key].cap || !freeShopping()&&state.money<cost(upgradeDefs[key],state.up[key]);});
     }
     else if(activePage==='prestige'){
       const gained=prestigeGain(),target=prestigeTarget()*Math.pow(gained+1,2),previous=prestigeTarget()*gained*gained;
@@ -466,15 +608,17 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
       $('prestigeBtn').disabled=gained<1;
       $('starsAvailable').textContent=fmt(state.dust)+' ✦ verfügbar';
       if(full || !$('metaList').children.length)renderMeta();
-    } else {
+    } else if(activePage==='shop'){renderShop(full);}
+    else if(activePage==='admin'){renderAdmin();}
+    else {
       $('allStats').innerHTML=`<div class="flexline"><span class="muted">Gesamt verdient</span><b>${fmt(state.totalEarned)} ◈</b></div><div class="settings-row"><span class="muted">Würfe insgesamt</span><b>${fmt(state.totalRolls)}</b></div><div class="settings-row"><span class="muted">Bester Durchlauf</span><b>${fmt(state.bestRun)} ◈</b></div><div class="settings-row"><span class="muted">Prestige-Stufe</span><b>${fmt(state.prestiges)}</b></div><div class="settings-row" style="border-bottom:0"><span class="muted">Gesammelter Sternenstaub</span><b>${fmt(state.totalDust)} ✦</b></div>`;
       $('soundToggle').textContent=state.sound?'AN':'AUS';$('motionToggle').textContent=state.motion?'AN':'AUS';renderAchievements();
     }
   }
-  function changePage(tab){activePage=tab;document.querySelectorAll('.page').forEach(p=>p.hidden=p.id!=='page-'+tab);document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));window.scrollTo({top:0,behavior:'instant'});render(true);}
+  function changePage(tab){if(tab==='admin'&&!adminSession){openAdmin();return;}activePage=tab;document.querySelectorAll('.page').forEach(p=>p.hidden=p.id!=='page-'+tab);document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));window.scrollTo({top:0,behavior:'instant'});render(true);}
   function grantOffline(seconds){
     if(seconds<=5||!state.up.auto)return 0;
-    const reward=perSecond()*Math.min(14400,Math.max(0,seconds))*.70;addIncome(reward);return reward;
+    const duration=Math.min(14400,Math.max(0,seconds)),now=Date.now(),base=expectedRoll(false,now+1e20)/autoInterval(),boostSeconds=Math.max(0,(Math.min(now,state.boostUntil)-Math.max(now-duration*1000,state.boostStart))/1000);const reward=base*(duration+boostSeconds)*.70;addIncome(reward);return reward;
   }
   function calculateOffline(){
     const now=Date.now(),reward=grantOffline((now-(hiddenAt===null?lastTick:hiddenAt))/1000);hiddenAt=null;lastTick=now;autoAccumulator=0;
@@ -482,7 +626,7 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
   }
   const offlineReward=grantOffline((Date.now()-state.lastSeen)/1000);
   if(offlineReward)setTimeout(()=>toast('☾ Willkommen zurück! +'+fmt(offlineReward)+' ◈'),600);
-  else if(migrated)setTimeout(()=>toast('Version 0.2 · Spielstand übernommen. Der lange Weg beginnt!'),600);
+  else if(migrated)setTimeout(()=>toast('Version 0.3 · Willkommen in BLOCKWORLD! Spielstand übernommen.'),600);
   document.querySelectorAll('[data-tab]').forEach(el=>el.addEventListener('click',()=>changePage(el.dataset.tab)));
   $('rollBtn').addEventListener('click',()=>{roll(true);render(true);});
   $('arena').addEventListener('click',()=>{roll(true);render(true);});
@@ -504,8 +648,8 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
     for(const [group,defs] of [['up',upgradeDefs],['meta',metaDefs]])for(const key of Object.keys(defs)){const v=candidate[group][key]??0;if(!Number.isInteger(v)||v<0||v>defs[key].cap)throw Error('level');}
     if(!confirm('Aktuellen Spielstand durch diese Sicherung ersetzen?'))return;
     localStorage.setItem('rollverse-before-import',JSON.stringify(state));
-    state={...initState(),...candidate,up:{...initState().up,...candidate.up},meta:{...initState().meta,...candidate.meta},schema:2,lastSeen:Date.now()};
-    state.quest=Math.min(100000,Math.floor(state.quest));state.focus=Math.min(29,Math.floor(state.focus));state.feverUntil=Math.min(state.feverUntil,Date.now()+8000);state.overdriveUntil=Math.min(state.overdriveUntil,Date.now()+10000);
+    state={...initState(),...candidate,up:{...initState().up,...candidate.up},meta:{...initState().meta,...candidate.meta},schema:3,lastSeen:Date.now()};
+    normalizePremium();state.quest=Math.min(100000,Math.floor(state.quest));state.focus=Math.min(29,Math.floor(state.focus));state.feverUntil=Math.min(state.feverUntil,Date.now()+8000);state.overdriveUntil=Math.min(state.overdriveUntil,Date.now()+10000);
     lastFaces=[];autoAccumulator=0;lastTick=Date.now();hiddenAt=null;document.body.classList.toggle('motion-off',!!state.motion);drawDice();save();changePage('play');toast('Spielstand wiederhergestellt');
   }catch(err){toast('Diese Datei ist keine gültige ROLLVERSE-Sicherung.');}finally{e.target.value='';}});
   document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')calculateOffline();else{hiddenAt=Date.now();save();}});
@@ -521,6 +665,17 @@ body:before{background:radial-gradient(ellipse at 50% 25%,#5b378638,transparent 
     if(now-lastToast>2600)$('toast').classList.remove('show');
     render();if(now-lastSave>2500)save();
   },200);
+  $('gemWallet').addEventListener('click',()=>changePage('shop'));$('petShopBtn').addEventListener('click',()=>changePage('shop'));
+  $('gemPacks').addEventListener('click',e=>{const btn=e.target.closest('[data-pack]');if(btn)requestGemPack(Number(btn.dataset.pack));});
+  $('shopItems').addEventListener('click',e=>{const btn=e.target.closest('[data-shop]');if(btn)requestPurchase(btn.dataset.shop);});
+  $('dailyBtn').addEventListener('click',claimDaily);$('defaultSkinBtn').addEventListener('click',()=>{state.skin='default';save();render(true);});$('defaultPetBtn').addEventListener('click',()=>{state.activePet='buddy';save();render(true);});
+  $('modalCancel').addEventListener('click',closeModal);$('gameModal').addEventListener('click',e=>{if(e.target===$('gameModal'))closeModal();});
+  $('modalConfirm').addEventListener('click',async()=>{if(!modalAction)return;const action=modalAction;$('modalConfirm').disabled=true;try{const result=await action();if(result!==false)closeModal();}catch{toast('Aktion konnte nicht gespeichert werden.');}finally{$('modalConfirm').disabled=false;}});
+  $('adminOpenBtn').addEventListener('click',openAdmin);$('adminActions').addEventListener('click',e=>{const btn=e.target.closest('[data-admin]');if(btn)adminAction(btn.dataset.admin);});
+  $('freeShopToggle').addEventListener('click',()=>{if(!adminSession)return;adminFree=!adminFree;render(true);});$('adminLockBtn').addEventListener('click',()=>{adminSession=false;adminFree=false;changePage('collection');toast('Admin-Modus gesperrt');});
+  $('logoBtn').addEventListener('click',()=>{const now=Date.now();logoTaps=now-lastLogoTap<1200?logoTaps+1:1;lastLogoTap=now;if(logoTaps>=5){logoTaps=0;openAdmin();}});
+  $('logoBtn').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('logoBtn').click();}});
+
   drawDice();render(true);save();
   if('serviceWorker'in navigator && ['https:','http:'].includes(location.protocol)){
     let pendingWorker=null;const showUpdate=worker=>{pendingWorker=worker;$('updateBanner').hidden=false;};
