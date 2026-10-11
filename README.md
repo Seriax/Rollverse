@@ -16,7 +16,7 @@ Desktop Idle-Game für Windows im Browser: https://seriax.github.io/Rollverse/
 - Basis-Chancen: Common 60 %, Rare 25 %, Epic 12 %, Legendary 2,5 %, Mythic 0,5 %. Nach 30 Ziehungen ohne Epic mindestens Epic; nach 80 ohne Legendary mindestens Legendary. Höhere Raritäten zählen für beide Garantien. Garantien beschränken die Ziehung auf passende Raritäten mit proportionalen Gewichten.
 - Duplikate verbessern automatisch Sterne bei 2/4/8/16/32 Kopien, maximal sechs Sterne. Jeder zusätzliche Stern verstärkt den Bonus um 30 % des Basiswerts. Bestes Team per Knopfdruck oder manuelle Auswahl.
 - Rift Expedition ab Level 8: 5 Minuten, läuft über Schließen und Rebirth weiter. Kosten an Rebirth gekoppelt; Belohnung: doppelter Einsatz in Cash, zwei Tickets, fünf Gems und 80 XP. Kein doppeltes Abholen.
-- Tastatur: Leertaste würfelt, 1–7 kaufen Upgrades, G öffnet eine Kapsel, R öffnet Rebirth, Escape schließt Dialoge. Eingabefelder und fokussierte Buttons behalten ihre normale Tastaturbedienung.
+- Tastatur: Leertaste würfelt, 1–7 kaufen Upgrades, G öffnet eine Kapsel, R öffnet Rebirth, Escape schließt Dialoge. Eingabefelder behalten ihre normale Tastaturbedienung; Leertaste betätigt fokussierte Buttons.
 
 ## Shop und Admin
 
